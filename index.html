@@ -3,344 +3,1260 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nick’s Window Services | Orlando</title>
-
+<title>Nick's Window Services | Premium Cleaning in Orlando</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #0f172a;
+  --accent: #f59e0b;
+  --accent-light: #fbbf24;
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-600: #475569;
+  --gray-800: #1e293b;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,sans-serif;
-  background:#f7f7f7;
-  color:#111;
-  scroll-behavior:smooth;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--white);
+  color: var(--gray-800);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* HERO */
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid var(--gray-100);
+  padding: 1rem 0;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo::before {
+  content: "✨";
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--gray-600);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* Hero Section */
 .hero {
-  text-align:center;
-  padding:100px 20px 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 2rem 4rem;
 }
 
-.hero img {
-  width:220px;
-  margin-bottom:20px;
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.4;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--accent-light);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 .hero h1 {
-  font-size:42px;
-  margin-bottom:10px;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
 }
 
-.hero p {
-  color:#666;
-  margin-bottom:25px;
+.hero h1 span {
+  color: var(--accent);
+  position: relative;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .btn {
-  padding:14px 26px;
-  border-radius:10px;
-  font-weight:600;
-  text-decoration:none;
-  margin:6px;
-  display:inline-block;
-  transition:all .3s;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
 }
 
-.btn-dark {
-  background:#111;
-  color:#fff;
+.btn-primary {
+  background: var(--accent);
+  color: var(--primary);
+  box-shadow: 0 10px 30px -5px rgba(245, 158, 11, 0.4);
 }
 
-.btn-dark:hover {
-  background:#333;
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px -5px rgba(245, 158, 11, 0.5);
+  background: var(--accent-light);
 }
 
-.btn-gold {
-  background:linear-gradient(135deg,#d4af37,#f2d16b);
-  color:#111;
+.btn-secondary {
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
 }
 
-.btn-gold:hover {
-  transform:translateY(-2px);
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
 }
 
-/* SECTIONS */
-.section {
-  padding:80px 20px;
-  text-align:center;
+/* Section Styles */
+section {
+  padding: 6rem 2rem;
 }
 
-h2 {
-  margin-bottom:30px;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* SERVICES */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  color: var(--gray-600);
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Services Section */
 .services {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:20px;
-  max-width:900px;
-  margin:auto;
+  background: var(--gray-50);
 }
 
-.service-box {
-  background:#fff;
-  padding:25px;
-  border-radius:14px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
-  transition:.3s;
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
-.service-box:hover {
-  transform:translateY(-5px);
+.service-card {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
 }
 
-/* PRICING */
-.pricing {
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  justify-content:center;
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  transform: scaleX(0);
+  transition: transform 0.3s;
 }
 
-.price-box {
-  background:#fff;
-  padding:25px;
-  border-radius:14px;
-  width:250px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
 }
 
-/* GALLERY */
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+}
+
+.service-card p {
+  color: var(--gray-600);
+  line-height: 1.7;
+}
+
+/* Pricing Section */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.price-card {
+  background: var(--white);
+  border: 2px solid var(--gray-100);
+  border-radius: 24px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.price-card.featured {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, var(--white) 0%, rgba(245, 158, 11, 0.05) 100%);
+  transform: scale(1.05);
+}
+
+.price-card.featured::after {
+  content: 'Most Popular';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.price-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+}
+
+.price-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.price span {
+  font-size: 1rem;
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+.price-desc {
+  color: var(--gray-600);
+  margin-bottom: 1.5rem;
+}
+
+.price-features {
+  list-style: none;
+  text-align: left;
+}
+
+.price-features li {
+  padding: 0.5rem 0;
+  color: var(--gray-600);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.price-features li::before {
+  content: '✓';
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Gallery Section */
 .gallery {
-  display:flex;
-  overflow:hidden;
+  background: var(--gray-50);
+  overflow: hidden;
 }
 
-.gallery-track {
-  display:flex;
-  animation:scroll 30s linear infinite;
+.gallery-scroll {
+  display: flex;
+  gap: 1.5rem;
+  animation: scroll 40s linear infinite;
+  width: max-content;
+  padding: 1rem 0;
 }
 
-.gallery img {
-  width:260px;
-  height:180px;
-  object-fit:cover;
-  border-radius:12px;
-  margin:10px;
+.gallery-scroll:hover {
+  animation-play-state: paused;
 }
 
-/* REVIEWS */
-.review-slider {
-  overflow:hidden;
-  max-width:700px;
-  margin:auto;
+.gallery-item {
+  flex-shrink: 0;
+  width: 350px;
+  height: 250px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  position: relative;
 }
 
-.review-track {
-  display:flex;
-  animation:scrollReviews 35s linear infinite;
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-overlay span {
+  color: var(--white);
+  font-weight: 600;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Reviews Section */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
 }
 
 .review-card {
-  min-width:100%;
-  background:#fff;
-  padding:25px;
-  border-radius:14px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.review-card::before {
+  content: '"';
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 4rem;
+  color: var(--accent);
+  opacity: 0.2;
+  font-family: Georgia, serif;
+  line-height: 1;
 }
 
 .stars {
-  color:#f5b50a;
-  margin-bottom:10px;
+  color: var(--accent);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
 }
 
-.review-name {
-  display:block;
-  margin-top:10px;
-  color:#666;
+.review-text {
+  color: var(--gray-800);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-style: italic;
 }
 
-/* GUARANTEE */
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.review-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+}
+
+.review-info h4 {
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.review-info span {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+/* Guarantee Section */
+.guarantee {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--gray-800) 100%);
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.guarantee::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(245,158,11,0.1) 0%, transparent 70%);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.guarantee-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .guarantee img {
-  width:160px;
-  margin-bottom:20px;
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+  animation: float 3s ease-in-out infinite;
 }
 
-/* MAP */
-.map iframe {
-  width:100%;
-  height:300px;
-  border:0;
-  border-radius:12px;
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-/* CONTACT */
-form {
-  max-width:500px;
-  margin:auto;
+.guarantee h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
 }
 
-input,textarea {
-  width:100%;
-  padding:12px;
-  margin:10px 0;
-  border-radius:8px;
-  border:1px solid #ccc;
+.guarantee p {
+  font-size: 1.25rem;
+  opacity: 0.9;
 }
 
-/* STICKY BUTTON */
-.call-btn {
-  position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  background:#111;
-  color:#fff;
-  text-align:center;
-  padding:14px;
-  font-weight:bold;
+/* Map Section */
+.map-section {
+  padding: 0;
+  background: var(--gray-50);
 }
 
-/* ANIMATIONS */
-@keyframes scroll {
-  0% {transform:translateX(0);}
-  100% {transform:translateX(-50%);}
+.map-container {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
 }
 
-@keyframes scrollReviews {
-  0% {transform:translateX(0);}
-  100% {transform:translateX(-100%);}
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: grayscale(20%) contrast(1.1);
 }
+
+.map-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, var(--gray-50) 0%, transparent 100%);
+  height: 100px;
+  pointer-events: none;
+}
+
+.service-areas {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.service-areas h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.areas-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.area-tag {
+  background: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  border: 1px solid var(--gray-100);
+  transition: all 0.3s;
+}
+
+.area-tag:hover {
+  background: var(--accent);
+  color: var(--primary);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Contact Section */
+.contact {
+  background: var(--white);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-info h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.contact-info > p {
+  color: var(--gray-600);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--gray-50);
+  border-radius: 16px;
+  transition: all 0.3s;
+}
+
+.contact-method:hover {
+  background: var(--accent);
+  color: var(--primary);
+  transform: translateX(5px);
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--white);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.contact-form {
+  background: var(--gray-50);
+  padding: 2.5rem;
+  border-radius: 24px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--gray-100);
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background: var(--white);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Sticky CTA */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  padding: 1rem;
+  box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
+  z-index: 999;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  border-top: 1px solid var(--gray-100);
+}
+
+.sticky-btn {
+  flex: 1;
+  max-width: 200px;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.sticky-btn-call {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.sticky-btn-call:hover {
+  background: var(--gray-800);
+  transform: translateY(-2px);
+}
+
+.sticky-btn-text {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.sticky-btn-text:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  background: var(--primary);
+  color: var(--white);
+  padding: 3rem 2rem 6rem;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.copyright {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .price-card.featured {
+    transform: scale(1);
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .gallery-item {
+    width: 280px;
+    height: 200px;
+  }
+  
+  section {
+    padding: 4rem 1.5rem;
+  }
+}
+
+/* Utility */
+.text-center { text-align: center; }
+.mt-2 { margin-top: 2rem; }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
+<!-- Navigation -->
+<nav>
+  <div class="nav-container">
+    <a href="#" class="logo">Nick's Services</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
 <section class="hero">
-  <img src="logo.png">
-  <h1>Crystal Clear Windows</h1>
-  <p>Premium Window & Exterior Cleaning in Orlando</p>
-
-  <a href="tel:3172199751" class="btn btn-dark">Call Now</a>
-  <a href="sms:3172199751" class="btn btn-gold">Get Free Quote</a>
-</section>
-
-<!-- SERVICES -->
-<section class="section">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="service-box">Window Cleaning</div>
-    <div class="service-box">Screen Cleaning</div>
-    <div class="service-box">Solar Panel Cleaning</div>
-    <div class="service-box">Pressure Washing</div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section class="section">
-  <h2>Simple Pricing</h2>
-  <div class="pricing">
-    <div class="price-box">
-      <h3>1 Story</h3>
-      <p>Starting at $149</p>
-    </div>
-    <div class="price-box">
-      <h3>2 Story</h3>
-      <p>Starting at $199</p>
-    </div>
-    <div class="price-box">
-      <h3>Interior</h3>
-      <p>$3–$5 per window</p>
-    </div>
-  </div>
-  <p style="color:#666;margin-top:15px;">Final pricing depends on size & window count</p>
-</section>
-
-<!-- GALLERY -->
-<section class="section">
-  <h2>Our Work</h2>
-  <div class="gallery">
-    <div class="gallery-track">
-      <img src="work1.jpg">
-      <img src="work2.jpg">
-      <img src="work3.jpg">
-      <img src="work4.jpg">
-      <img src="work5.jpg">
-      <img src="work6.jpg">
-      <img src="work7.jpg">
-      <img src="work8.jpg">
+  <div class="hero-content">
+    <div class="hero-badge">🌟 5-Star Rated in Orlando</div>
+    <h1>Crystal Clear Windows <span>&</span> Professional Pressure Washing</h1>
+    <p class="hero-subtitle">Transform your home or business with Orlando's most trusted exterior cleaning service. We bring the sparkle back to your property.</p>
+    <div class="hero-cta">
+      <a href="tel:3172199751" class="btn btn-primary">📞 Call (317) 219-9751</a>
+      <a href="#contact" class="btn btn-secondary">Get Free Quote</a>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section class="section">
-  <h2>What Customers Say</h2>
-
-  <div class="review-slider">
-    <div class="review-track">
-
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p>Excellent service. Windows look brand new.</p>
-        <span class="review-name">— Meredith C.</span>
+<!-- Services Section -->
+<section id="services" class="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">What We Do</span>
+      <h2 class="section-title">Premium Exterior Cleaning Services</h2>
+      <p class="section-subtitle">From sparkling windows to spotless surfaces, we handle it all with professional care and attention to detail.</p>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🪟</div>
+        <h3>Window Cleaning</h3>
+        <p>Interior and exterior window cleaning with our streak-free guarantee. We clean frames, sills, and tracks for a complete finish.</p>
       </div>
-
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p>Detail-oriented and very professional.</p>
-        <span class="review-name">— Laura A.</span>
+      
+      <div class="service-card">
+        <div class="service-icon">🧽</div>
+        <h3>Pressure Washing</h3>
+        <p>Restore driveways, patios, siding, and decks to like-new condition. Safe, effective cleaning for all exterior surfaces.</p>
       </div>
-
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p>Amazing job. Highly recommend.</p>
-        <span class="review-name">— Stephen B.</span>
+      
+      <div class="service-card">
+        <div class="service-icon">🔲</div>
+        <h3>Screen Cleaning</h3>
+        <p>Remove dirt, pollen, and grime from your window screens. We clean and reinstall them properly for optimal airflow.</p>
       </div>
-
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p>Fantastic results. Will use again.</p>
-        <span class="review-name">— Bill N.</span>
+      
+      <div class="service-card">
+        <div class="service-icon">☀️</div>
+        <h3>Solar Panel Cleaning</h3>
+        <p>Maximize your energy efficiency with professional solar panel cleaning. Safe, eco-friendly methods that protect your investment.</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- GUARANTEE -->
-<section class="section guarantee">
-  <img src="guarantee-badge.png">
-  <h2>100% Streak-Free Guarantee</h2>
-  <p>We don’t leave until you love it.</p>
+<!-- Pricing Section -->
+<section id="pricing" class="pricing-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Transparent Pricing</span>
+      <h2 class="section-title">Simple, Upfront Pricing</h2>
+      <p class="section-subtitle">No hidden fees, no surprises. Get quality service at fair prices.</p>
+    </div>
+    
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-label">Single Story Home</div>
+        <div class="price">$149<span>/starting</span></div>
+        <p class="price-desc">Perfect for ranch-style homes and bungalows</p>
+        <ul class="price-features">
+          <li>Exterior window cleaning</li>
+          <li>Screen cleaning included</li>
+          <li>Track & sill cleaning</li>
+          <li>Streak-free guarantee</li>
+        </ul>
+      </div>
+      
+      <div class="price-card featured">
+        <div class="price-label">Two Story Home</div>
+        <div class="price">$199<span>/starting</span></div>
+        <p class="price-desc">Most popular choice for family homes</p>
+        <ul class="price-features">
+          <li>All exterior windows</li>
+          <li>Interior windows available</li>
+          <li>Screen & track cleaning</li>
+          <li>Hard water removal</li>
+          <li>Priority scheduling</li>
+        </ul>
+      </div>
+      
+      <div class="price-card">
+        <div class="price-label">Interior Add-On</div>
+        <div class="price">$3-5<span>/per window</span></div>
+        <p class="price-desc">Add interior cleaning to any package</p>
+        <ul class="price-features">
+          <li>Inside glass cleaning</li>
+          <li>Frame wipe-down</li>
+          <li>Sill detailing</li>
+          <li>Screen reinstallation</li>
+        </ul>
+      </div>
+    </div>
+    
+    <p class="text-center mt-2" style="color: var(--gray-600);">Final pricing depends on home size, window count, and condition. <a href="#contact" style="color: var(--accent); font-weight: 600;">Contact us</a> for a custom quote!</p>
+  </div>
 </section>
 
-<!-- MAP -->
-<section class="section map">
-  <h2>Serving Greater Orlando</h2>
-  <iframe src="https://maps.google.com/maps?q=orlando&t=&z=10&ie=UTF8&iwloc=&output=embed"></iframe>
-
-  <p style="margin-top:15px;color:#666;">
-  Orlando • Celebration • Kissimmee • Davenport • Windermere • Winter Garden • Clermont • Ocoee • Lake Buena Vista • Winter Park
-  </p>
+<!-- Gallery Section -->
+<section id="gallery" class="gallery">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Our Work</span>
+      <h2 class="section-title">See The Difference</h2>
+      <p class="section-subtitle">Real results from real customers across Orlando.</p>
+    </div>
+  </div>
+  
+  <div class="gallery-scroll">
+    <div class="gallery-item">
+      <img src="work1.jpg" alt="Window cleaning before and after">
+      <div class="gallery-overlay"><span>Window Cleaning</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="work2.jpg" alt="Pressure washing results">
+      <div class="gallery-overlay"><span>Pressure Washing</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="work3.jpg" alt="Residential window cleaning">
+      <div class="gallery-overlay"><span>Residential Service</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="work4.jpg" alt="Commercial window cleaning">
+      <div class="gallery-overlay"><span>Commercial Property</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="work5.jpg" alt="Solar panel cleaning">
+      <div class="gallery-overlay"><span>Solar Panel Cleaning</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="work6.jpg" alt="Screen cleaning">
+      <div class="gallery-overlay"><span>Screen Restoration</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="work7.jpg" alt="Driveway pressure washing">
+      <div class="gallery-overlay"><span>Driveway Cleaning</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="work8.jpg" alt="Patio pressure washing">
+      <div class="gallery-overlay"><span>Patio Restoration</span></div>
+    </div>
+    <!-- Duplicate for infinite scroll -->
+    <div class="gallery-item">
+      <img src="work1.jpg" alt="Window cleaning before and after">
+      <div class="gallery-overlay"><span>Window Cleaning</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="work2.jpg" alt="Pressure washing results">
+      <div class="gallery-overlay"><span>Pressure Washing</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="work3.jpg" alt="Residential window cleaning">
+      <div class="gallery-overlay"><span>Residential Service</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="work4.jpg" alt="Commercial window cleaning">
+      <div class="gallery-overlay"><span>Commercial Property</span></div>
+    </div>
+  </div>
 </section>
 
-<!-- CONTACT -->
-<section class="section">
-  <h2>Get a Free Quote</h2>
-  <form>
-    <input type="text" placeholder="Name">
-    <input type="tel" placeholder="Phone">
-    <input type="text" placeholder="City">
-    <textarea placeholder="What do you need cleaned?"></textarea>
-    <button class="btn btn-dark">Request Quote</button>
-  </form>
+<!-- Reviews Section -->
+<section id="reviews" class="reviews">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Testimonials</span>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p class="section-subtitle">Don't just take our word for it—hear from homeowners across Orlando.</p>
+    </div>
+    
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Nick did an amazing job on our windows! They literally sparkle now. He was professional, on time, and left no mess behind. Will definitely be using his services again.</p>
+        <div class="review-author">
+          <img src="review1.jpg" alt="Meredith C." class="review-avatar">
+          <div class="review-info">
+            <h4>Meredith C.</h4>
+            <span>Winter Park, FL</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">I've used several window cleaners in Orlando, but Nick is by far the best. Detail-oriented, fair pricing, and my windows have never looked better. Highly recommend!</p>
+        <div class="review-author">
+          <img src="review1.jpg" alt="Laura A." class="review-avatar">
+          <div class="review-info">
+            <h4>Laura A.</h4>
+            <span>Celebration, FL</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Hired Nick for pressure washing our driveway and patio—incredible difference! He treated our property like his own. Great communication from start to finish.</p>
+        <div class="review-author">
+          <img src="review1.jpg" alt="Stephen B." class="review-avatar">
+          <div class="review-info">
+            <h4>Stephen B.</h4>
+            <span>Windermere, FL</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Fantastic results on our two-story home. Nick was careful, thorough, and even cleaned our hard-to-reach skylights. Worth every penny!</p>
+        <div class="review-author">
+          <img src="review1.jpg" alt="Bill N." class="review-avatar">
+          <div class="review-info">
+            <h4>Bill N.</h4>
+            <span>Lake Buena Vista, FL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- STICKY CALL -->
-<div class="call-btn">
-  <a href="tel:3172199751" style="color:white;text-decoration:none;">📞 Call Now</a>
+<!-- Guarantee Section -->
+<section class="guarantee">
+  <div class="guarantee-content">
+    <img src="guarantee-badge.jpg" alt="100% Satisfaction Guarantee">
+    <h2>100% Streak-Free Guarantee</h2>
+    <p>We don't leave until you love it. Your satisfaction is our top priority—if you're not happy, we'll make it right. That's our promise to you.</p>
+  </div>
+</section>
+
+<!-- Map Section -->
+<section class="map-section">
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224444.704971!2d-81.508833!3d28.4810979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e77eddb3e8d6f5%3A0x9c8e9e5e5e5e5e5e!2sOrlando%2C%20FL!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="map-overlay"></div>
+  </div>
+  
+  <div class="service-areas">
+    <h3>Serving Greater Orlando</h3>
+    <div class="areas-list">
+      <span class="area-tag">Orlando</span>
+      <span class="area-tag">Celebration</span>
+      <span class="area-tag">Kissimmee</span>
+      <span class="area-tag">Davenport</span>
+      <span class="area-tag">Windermere</span>
+      <span class="area-tag">Winter Garden</span>
+      <span class="area-tag">Clermont</span>
+      <span class="area-tag">Ocoee</span>
+      <span class="area-tag">Lake Buena Vista</span>
+      <span class="area-tag">Winter Park</span>
+      <span class="area-tag">Altamonte Springs</span>
+      <span class="area-tag">Longwood</span>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="section-tag">Get Started</span>
+        <h3>Ready for Crystal Clear Results?</h3>
+        <p>Get your free, no-obligation quote today. We typically respond within 2 hours during business hours.</p>
+        
+        <div class="contact-methods">
+          <a href="tel:3172199751" class="contact-method">
+            <div class="contact-icon">📞</div>
+            <div>
+              <strong>Call Us</strong>
+              <div style="color: var(--gray-600); font-size: 0.9rem;">(317) 219-9751</div>
+            </div>
+          </a>
+          
+          <a href="sms:3172199751" class="contact-method">
+            <div class="contact-icon">💬</div>
+            <div>
+              <strong>Text Us</strong>
+              <div style="color: var(--gray-600); font-size: 0.9rem;">Send photos for quick quote</div>
+            </div>
+          </a>
+          
+          <div class="contact-method">
+            <div class="contact-icon">⏰</div>
+            <div>
+              <strong>Business Hours</strong>
+              <div style="color: var(--gray-600); font-size: 0.9rem;">Mon-Sat: 8AM - 6PM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks! We\\'ll contact you shortly.');">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="John Smith" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="(407) 555-0123" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" id="city" placeholder="Orlando, FL" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="service">Service Needed</label>
+          <select id="service" required>
+            <option value="">Select a service...</option>
+            <option value="window">Window Cleaning</option>
+            <option value="pressure">Pressure Washing</option>
+            <option value="both">Windows + Pressure Washing</option>
+            <option value="solar">Solar Panel Cleaning</option>
+            <option value="other">Other / Not Sure</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Tell us about your project</label>
+          <textarea id="message" placeholder="Number of windows, specific areas needing pressure washing, etc."></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Request Free Quote</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo">✨ Nick's Window Services</div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#gallery">Gallery</a>
+      <a href="tel:3172199751">(317) 219-9751</a>
+    </div>
+    <p class="copyright">© 2024 Nick's Window Services. Licensed & Insured. Serving Orlando, FL.</p>
+  </div>
+</footer>
+
+<!-- Sticky CTA -->
+<div class="sticky-cta">
+  <a href="tel:3172199751" class="sticky-btn sticky-btn-call">📞 Call Now</a>
+  <a href="sms:3172199751" class="sticky-btn sticky-btn-text">💬 Text for Quote</a>
 </div>
 
 </body>
