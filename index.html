@@ -9,7 +9,7 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: -apple-system, sans-serif;
   background: #f8f8f8;
   color: #111;
 }
@@ -18,11 +18,10 @@ body {
 .hero {
   text-align: center;
   padding: 100px 20px 60px;
-  animation: fadeIn 1s ease;
 }
 
 .logo {
-  width: 220px;
+  width: 320px;
   margin-bottom: 20px;
   animation: float 4s ease-in-out infinite;
 }
@@ -33,8 +32,7 @@ body {
 }
 
 .hero h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
+  font-size: 44px;
 }
 
 .hero p {
@@ -49,8 +47,8 @@ body {
 }
 
 .btn {
-  padding: 14px 26px;
-  border-radius: 10px;
+  padding: 16px 30px;
+  border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s;
@@ -61,13 +59,33 @@ body {
   color: white;
 }
 
-.btn-gold {
-  background: #f4c542;
-  color: black;
+.btn-outline {
+  border: 2px solid #111;
+  color: #111;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* SERVICES */
+.services {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.service-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.service {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 200px;
 }
 
 /* PRICING */
@@ -76,47 +94,26 @@ body {
   padding: 60px 20px;
 }
 
-.pricing h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
-}
-
 .price-boxes {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .price-box {
   background: white;
   padding: 25px;
   border-radius: 12px;
-  width: 250px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: 0.3s;
-}
-
-.price-box:hover {
-  transform: translateY(-5px);
-}
-
-.price-box h3 {
-  margin-bottom: 10px;
-}
-
-.price {
-  font-size: 22px;
-  font-weight: bold;
+  width: 260px;
 }
 
 .note {
-  margin-top: 20px;
   color: #666;
-  font-size: 14px;
+  margin-top: 15px;
 }
 
-/* WORK SLIDER */
+/* SLIDER */
 .slider {
   overflow: hidden;
   padding: 60px 0;
@@ -152,34 +149,42 @@ body {
   background: white;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  animation: fadeIn 1s ease;
-}
-
-.stars {
-  color: gold;
-  margin-bottom: 10px;
-}
-
-.name {
-  margin-top: 10px;
-  font-weight: bold;
 }
 
 /* MAP */
 .map {
-  padding: 60px 20px;
   text-align: center;
+  padding: 60px 20px;
 }
 
 iframe {
   width: 100%;
   height: 300px;
   border-radius: 12px;
-  border: none;
 }
 
-/* MOBILE CALL BAR */
+/* CITIES */
+.cities {
+  margin-top: 15px;
+  color: #666;
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+input, textarea {
+  width: 90%;
+  max-width: 400px;
+  margin: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* CALL BAR */
 .callbar {
   position: fixed;
   bottom: 0;
@@ -188,18 +193,6 @@ iframe {
   color: white;
   text-align: center;
   padding: 15px;
-}
-
-.callbar a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
 }
 
 </style>
@@ -215,101 +208,103 @@ iframe {
 
   <div class="buttons">
     <a href="tel:3172199751" class="btn btn-dark">Call Now</a>
-    <a href="sms:3172199751" class="btn btn-gold">Get Free Quote</a>
+    <a href="sms:3172199751" class="btn btn-outline">Get Free Quote</a>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div class="services">
+  <h2>Our Services</h2>
+  <div class="service-list">
+    <div class="service">Window Cleaning</div>
+    <div class="service">Screen Cleaning</div>
+    <div class="service">Solar Panel Cleaning</div>
+    <div class="service">Pressure Washing</div>
   </div>
 </div>
 
 <!-- PRICING -->
 <div class="pricing">
-  <h2>Simple, Transparent Pricing</h2>
+  <h2>Simple Pricing</h2>
 
   <div class="price-boxes">
     <div class="price-box">
-      <h3>1 Story Homes</h3>
-      <p class="price">Starting at $149</p>
+      1 Story Homes<br><strong>Starting at $149</strong>
     </div>
 
     <div class="price-box">
-      <h3>2 Story Homes</h3>
-      <p class="price">Starting at $199</p>
+      2 Story Homes<br><strong>Starting at $199</strong>
     </div>
 
     <div class="price-box">
-      <h3>Interior Add-On</h3>
-      <p class="price">$3–$5 per window</p>
+      Interior Add-On<br><strong>$3–$5 per window</strong>
+    </div>
+
+    <div class="price-box">
+      Pressure Washing<br><strong>Starting at $99+</strong>
     </div>
   </div>
 
-  <p class="note">
-    Final pricing depends on window count, size, and accessibility.
-  </p>
+  <p class="note">Final pricing depends on size, condition, and access.</p>
 </div>
 
-<!-- WORK -->
+<!-- WORK SLIDER -->
 <div class="slider">
   <div class="slide-track">
-    <img src="work1.jpg">
-    <img src="work2.jpg">
-    <img src="work3.jpg">
-    <img src="work4.jpg">
-    <img src="work5.jpg">
-    <img src="work6.jpg">
-    <img src="work7.jpg">
-    <img src="work8.jpg">
+    <img src="work1.jpg"><img src="work2.jpg"><img src="work3.jpg">
+    <img src="work4.jpg"><img src="work5.jpg"><img src="work6.jpg">
+    <img src="work7.jpg"><img src="work8.jpg">
 
-    <!-- duplicate for smooth loop -->
-    <img src="work1.jpg">
-    <img src="work2.jpg">
-    <img src="work3.jpg">
-    <img src="work4.jpg">
+    <img src="work1.jpg"><img src="work2.jpg"><img src="work3.jpg">
   </div>
 </div>
 
 <!-- REVIEWS -->
 <div class="reviews">
   <h2>What Customers Say</h2>
-
-  <div class="review-box" id="reviewBox">
-    <div class="stars">★★★★★</div>
-    <p id="reviewText"></p>
-    <div class="name" id="reviewName"></div>
-  </div>
+  <div class="review-box" id="reviewBox"></div>
 </div>
 
 <!-- MAP -->
 <div class="map">
   <h2>Serving Greater Orlando</h2>
-  <iframe src="https://maps.google.com/maps?q=orlando&t=&z=10&ie=UTF8&iwloc=&output=embed"></iframe>
+  <iframe src="https://maps.google.com/maps?q=orlando&t=&z=10&output=embed"></iframe>
+
+  <div class="cities">
+    Orlando • Celebration • Kissimmee • Davenport • Windermere • Winter Garden • Clermont • Ocoee • Dr Phillips • Lake Buena Vista
+  </div>
 </div>
 
-<!-- CALL BAR -->
+<!-- CONTACT -->
+<div class="contact">
+  <h2>Get a Free Quote</h2>
+  <input placeholder="Name"><br>
+  <input placeholder="Phone"><br>
+  <textarea placeholder="What do you need cleaned?"></textarea><br>
+  <button class="btn btn-dark">Submit</button>
+</div>
+
 <div class="callbar">
-  <a href="tel:3172199751">Call Now</a>
+  Call Now: 317-219-9751
 </div>
 
 <script>
-
-/* REVIEW SLIDER */
 const reviews = [
-  ["Definitely recommend. Excellent service and great prices. My windows are cleaner than when they were brand new.", "Meredith C."],
-  ["So glad I gave him the job. My windows look incredible. Detail-oriented and professional.", "Laura A."],
-  ["Nick did an amazing job. I’ve already recommended him to neighbors.", "Stephen B."],
-  ["Fantastic job. Highly recommend this service.", "Bill N."],
-  ["Extremely happy. Cleaned glass, sills, and screens perfectly.", "Crystal V."],
-  ["Very hardworking and thorough. Results were amazing.", "Rose G."]
+"Definitely recommend. Excellent service and great prices. My windows are cleaner than brand new. – Meredith C.",
+"My windows look incredible. Detail-oriented and professional. – Laura A.",
+"Amazing job. I’ve recommended him to neighbors. – Stephen B.",
+"Fantastic job. Highly recommend. – Bill N.",
+"Extremely happy. Everything cleaned perfectly. – Crystal V.",
+"Very hardworking and thorough. – Rose G."
 ];
 
 let i = 0;
-
-function rotateReviews() {
-  document.getElementById("reviewText").innerText = reviews[i][0];
-  document.getElementById("reviewName").innerText = "- " + reviews[i][1];
+function rotate() {
+  document.getElementById("reviewBox").innerText = reviews[i];
   i = (i + 1) % reviews.length;
 }
-
-rotateReviews();
-setInterval(rotateReviews, 4000);
-
+rotate();
+setInterval(rotate, 4000);
 </script>
 
 </body>
