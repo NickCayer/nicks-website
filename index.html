@@ -8,28 +8,40 @@
 <style>
 body {
   margin:0;
-  font-family: Arial, sans-serif;
-  background:#f9f9f9;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background:#f5f5f5;
   color:#111;
 }
 
 /* HERO */
 .hero {
   text-align:center;
-  padding:60px 20px;
+  padding:80px 20px 60px;
 }
 
 .hero img {
-  width:120px;
+  width:220px;
+  margin-bottom:20px;
 }
 
+h1 {
+  font-size:36px;
+  margin:10px 0;
+}
+
+p {
+  color:#555;
+}
+
+/* BUTTONS */
 .btn {
   display:inline-block;
   margin:10px;
-  padding:12px 20px;
-  border-radius:6px;
+  padding:14px 26px;
+  border-radius:8px;
   text-decoration:none;
-  font-weight:bold;
+  font-weight:600;
+  transition:0.3s;
 }
 
 .btn-dark {
@@ -37,43 +49,74 @@ body {
   color:white;
 }
 
+.btn-dark:hover {
+  background:#333;
+}
+
 .btn-gold {
-  background:#d4af37;
+  background:linear-gradient(135deg,#d4af37,#f5d76e);
   color:black;
 }
 
-/* SECTION */
+.btn-gold:hover {
+  transform:translateY(-2px);
+}
+
+/* SECTIONS */
 .section {
-  padding:40px 20px;
+  padding:60px 20px;
   text-align:center;
 }
 
 /* GALLERY */
 .gallery {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:10px;
-  max-width:900px;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:14px;
+  max-width:1000px;
   margin:auto;
 }
 
 .gallery img {
   width:100%;
-  border-radius:10px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* REVIEWS CAROUSEL */
+/* PRICING */
+.pricing {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.card {
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  width:260px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.1);
+}
+
+.price {
+  font-size:28px;
+  font-weight:bold;
+  margin:10px 0;
+}
+
+/* REVIEWS */
 .carousel {
   max-width:600px;
   margin:auto;
-  position:relative;
 }
 
 .review {
   display:none;
   background:white;
-  padding:20px;
-  border-radius:10px;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.1);
 }
 
 .review.active {
@@ -81,32 +124,32 @@ body {
 }
 
 .stars {
-  color:gold;
+  color:#f5b301;
   margin-bottom:10px;
 }
 
 /* MAP */
 iframe {
   width:100%;
-  height:250px;
+  height:260px;
   border:0;
-  border-radius:10px;
+  border-radius:12px;
 }
 
-/* STICKY CALL */
+/* STICKY */
 .sticky {
   position:fixed;
   bottom:0;
   width:100%;
   background:#111;
   text-align:center;
-  padding:15px;
+  padding:14px;
 }
 
 .sticky a {
   color:white;
+  font-weight:600;
   text-decoration:none;
-  font-size:18px;
 }
 </style>
 </head>
@@ -117,10 +160,10 @@ iframe {
 <div class="hero">
   <img src="logo.png">
   <h1>Crystal Clear Windows</h1>
-  <p>Professional Window Cleaning in Orlando</p>
+  <p>Premium Exterior Cleaning in Orlando</p>
 
   <a href="tel:3172199751" class="btn btn-dark">Call Now</a>
-  <a href="sms:3172199751" class="btn btn-gold">Text for Quote</a>
+  <a href="sms:3172199751" class="btn btn-gold">Get Free Quote</a>
 </div>
 
 <!-- WORK -->
@@ -139,6 +182,33 @@ iframe {
   </div>
 </div>
 
+<!-- PRICING -->
+<div class="section">
+  <h2>Simple Pricing</h2>
+
+  <div class="pricing">
+
+    <div class="card">
+      <h3>Basic</h3>
+      <div class="price">$99+</div>
+      <p>Exterior Windows</p>
+    </div>
+
+    <div class="card">
+      <h3>Standard</h3>
+      <div class="price">$149+</div>
+      <p>Interior + Exterior</p>
+    </div>
+
+    <div class="card">
+      <h3>Premium</h3>
+      <div class="price">$199+</div>
+      <p>Windows + Screens + Tracks</p>
+    </div>
+
+  </div>
+</div>
+
 <!-- REVIEWS -->
 <div class="section">
   <h2>What Customers Say</h2>
@@ -147,37 +217,37 @@ iframe {
 
     <div class="review active">
       <div class="stars">★★★★★</div>
-      <p>“Definitely recommend. Excellent service and great prices. My windows are cleaner than when they were brand new.”</p>
+      <p>“Definitely recommend. Excellent service and great prices.”</p>
       <strong>– Meredith C.</strong>
     </div>
 
     <div class="review">
       <div class="stars">★★★★★</div>
-      <p>“My windows look incredible. Detail-oriented, professional, and easy to work with.”</p>
+      <p>“My windows look incredible. Detail-oriented and professional.”</p>
       <strong>– Laura A.</strong>
     </div>
 
     <div class="review">
       <div class="stars">★★★★★</div>
-      <p>“Amazing job. I’ve already recommended him to my neighbors.”</p>
+      <p>“Amazing job. I’ve already told my neighbors.”</p>
       <strong>– Stephen B.</strong>
     </div>
 
     <div class="review">
       <div class="stars">★★★★★</div>
-      <p>“Fantastic job. Highly recommend this service.”</p>
+      <p>“Highly recommend this service.”</p>
       <strong>– Bill N.</strong>
     </div>
 
     <div class="review">
       <div class="stars">★★★★★</div>
-      <p>“Extremely happy. Everything was cleaned perfectly.”</p>
+      <p>“Everything was cleaned perfectly.”</p>
       <strong>– Crystal V.</strong>
     </div>
 
     <div class="review">
       <div class="stars">★★★★★</div>
-      <p>“Very hardworking and thorough. Results were amazing.”</p>
+      <p>“Hardworking and thorough. Results were amazing.”</p>
       <strong>– Rose G.</strong>
     </div>
 
@@ -188,7 +258,7 @@ iframe {
 <div class="section">
   <h2>Serving Greater Orlando</h2>
 
-  <iframe src="https://maps.google.com/maps?q=Celebration%20Florida&t=&z=10&ie=UTF8&iwloc=&output=embed"></iframe>
+  <iframe src="https://maps.google.com/maps?q=Celebration%20Florida&t=&z=10&output=embed"></iframe>
 
   <p>Orlando • Celebration • Kissimmee • Davenport • Windermere • Winter Garden • Clermont</p>
 </div>
@@ -199,13 +269,13 @@ iframe {
 </div>
 
 <script>
-let index = 0;
+let i = 0;
 const reviews = document.querySelectorAll(".review");
 
 setInterval(() => {
-  reviews[index].classList.remove("active");
-  index = (index + 1) % reviews.length;
-  reviews[index].classList.add("active");
+  reviews[i].classList.remove("active");
+  i = (i + 1) % reviews.length;
+  reviews[i].classList.add("active");
 }, 3000);
 </script>
 
