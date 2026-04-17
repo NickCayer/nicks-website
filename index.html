@@ -10,7 +10,7 @@
 body {
   margin: 0;
   font-family: -apple-system, sans-serif;
-  background: linear-gradient(180deg, #ffffff, #f3f4f6);
+  background: linear-gradient(180deg, #ffffff, #f5f5f5);
   color: #111;
 }
 
@@ -18,14 +18,13 @@ body {
 .hero {
   text-align: center;
   padding: 120px 20px 80px;
-  background: radial-gradient(circle at top, #ffffff, #f1f1f1);
 }
 
 .logo {
-  width: 380px;
-  margin-bottom: 25px;
+  width: 480px;
+  max-width: 90%;
+  margin-bottom: 20px;
   animation: float 5s ease-in-out infinite;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
 }
 
 @keyframes float {
@@ -34,69 +33,77 @@ body {
 }
 
 .hero h1 {
-  font-size: 52px;
-  font-weight: 700;
+  font-size: 54px;
   margin-bottom: 10px;
-  letter-spacing: -1px;
 }
 
 .hero p {
-  color: #666;
+  color: #555;
   font-size: 18px;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
+}
+
+.trust {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 25px;
 }
 
 /* BUTTONS */
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .btn {
   padding: 16px 34px;
-  border-radius: 14px;
+  border-radius: 12px;
   font-weight: 600;
   text-decoration: none;
   transition: 0.3s;
 }
 
-.btn-dark {
-  background: linear-gradient(135deg, #111, #333);
+.btn-call {
+  background: #111;
   color: white;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.btn-outline {
-  border: 2px solid #111;
-  color: #111;
-  background: white;
+.btn-call:hover {
+  background: #000;
+  transform: scale(1.05);
 }
 
-.btn:hover {
-  transform: translateY(-4px) scale(1.05);
+.btn-quote {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+}
+
+.btn-quote:hover {
+  transform: scale(1.05);
+}
+
+/* SECTION */
+.section {
+  padding: 80px 20px;
+  text-align: center;
 }
 
 /* SERVICES */
 .services {
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.service-list {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .service {
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(10px);
-  padding: 25px;
-  border-radius: 14px;
-  width: 220px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
   transition: 0.3s;
 }
 
@@ -104,124 +111,101 @@ body {
   transform: translateY(-8px);
 }
 
-/* PRICING */
-.pricing {
-  text-align: center;
-  padding: 80px 20px;
+.service h3 {
+  margin-bottom: 10px;
 }
 
-.price-boxes {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
+/* PRICING */
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
 .price-box {
   background: white;
-  padding: 30px;
-  border-radius: 16px;
-  width: 260px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  transition: 0.3s;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
 
-.price-box:hover {
-  transform: translateY(-8px) scale(1.03);
-}
-
-.note {
-  color: #666;
-  margin-top: 20px;
-}
-
-/* SLIDER */
-.slider {
-  overflow: hidden;
-  padding: 80px 0;
-}
-
-.slide-track {
+/* GALLERY */
+.carousel {
   display: flex;
-  gap: 25px;
-  animation: scroll 30s linear infinite;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px;
 }
 
-.slide-track img {
+.carousel img {
   width: 260px;
-  height: 260px;
+  height: 200px;
   object-fit: cover;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  flex-shrink: 0;
 }
 
 /* REVIEWS */
 .reviews {
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.review-box {
   max-width: 600px;
   margin: auto;
+  position: relative;
+}
+
+.review {
+  display: none;
   background: white;
-  padding: 35px;
+  padding: 30px;
   border-radius: 16px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  font-size: 17px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.review.active {
+  display: block;
+}
+
+.stars {
+  color: gold;
+  margin-bottom: 10px;
+}
+
+/* GUARANTEE */
+.guarantee-box {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
 }
 
 /* MAP */
-.map {
-  text-align: center;
-  padding: 80px 20px;
-}
-
-iframe {
+.map iframe {
   width: 100%;
-  height: 320px;
-  border-radius: 16px;
+  height: 300px;
   border: none;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.cities {
-  margin-top: 15px;
-  color: #666;
+  border-radius: 12px;
 }
 
 /* CONTACT */
-.contact {
-  text-align: center;
-  padding: 80px 20px;
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 input, textarea {
-  width: 90%;
-  max-width: 420px;
-  margin: 12px;
   padding: 14px;
   border-radius: 10px;
   border: 1px solid #ddd;
 }
 
-button {
-  padding: 14px 30px;
-  border-radius: 12px;
-  border: none;
-  background: #111;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* CALL BAR */
-.callbar {
+/* STICKY CALL */
+.sticky {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -236,89 +220,149 @@ button {
 
 <body>
 
+<!-- HERO -->
 <div class="hero">
   <img src="logo.png" class="logo">
   <h1>Crystal Clear Windows</h1>
   <p>Premium Window & Exterior Cleaning in Orlando</p>
 
+  <div class="trust">
+    ★★★★★ Rated • Detail-Oriented • Professional Service
+  </div>
+
   <div class="buttons">
-    <a href="tel:3172199751" class="btn btn-dark">Call Now</a>
-    <a href="sms:3172199751" class="btn btn-outline">Get Free Quote</a>
+    <a href="tel:3172199751" class="btn btn-call">Call Now</a>
+    <a href="sms:3172199751" class="btn btn-quote">Get Free Quote</a>
   </div>
 </div>
 
-<div class="services">
+<!-- SERVICES -->
+<div class="section">
   <h2>Our Services</h2>
-  <div class="service-list">
-    <div class="service">Window Cleaning</div>
-    <div class="service">Screen Cleaning</div>
-    <div class="service">Solar Panel Cleaning</div>
-    <div class="service">Pressure Washing</div>
+  <div class="services">
+    <div class="service"><h3>Window Cleaning</h3><p>Crystal clear glass inside & out.</p></div>
+    <div class="service"><h3>Pressure Washing</h3><p>Driveways, patios, and homes restored.</p></div>
+    <div class="service"><h3>Screen Cleaning</h3><p>Clean screens for a perfect finish.</p></div>
+    <div class="service"><h3>Solar Panel Cleaning</h3><p>Maximize efficiency and lifespan.</p></div>
   </div>
 </div>
 
-<div class="pricing">
-  <h2>Simple Pricing</h2>
-  <div class="price-boxes">
-    <div class="price-box">1 Story Homes<br><strong>$149+</strong></div>
-    <div class="price-box">2 Story Homes<br><strong>$199+</strong></div>
-    <div class="price-box">Interior Add-On<br><strong>$3–$5/window</strong></div>
-    <div class="price-box">Pressure Washing<br><strong>$99+</strong></div>
+<!-- PRICING -->
+<div class="section">
+  <h2>Simple, Transparent Pricing</h2>
+  <div class="pricing">
+    <div class="price-box">
+      <h3>1 Story Homes</h3>
+      <p><strong>Starting at $149</strong></p>
+    </div>
+    <div class="price-box">
+      <h3>2 Story Homes</h3>
+      <p><strong>Starting at $199</strong></p>
+    </div>
+    <div class="price-box">
+      <h3>Interior Add-On</h3>
+      <p><strong>$3–$5 per window</strong></p>
+    </div>
   </div>
-  <p class="note">Pricing varies based on size, condition, and access.</p>
+  <p style="margin-top:10px;color:#666;">
+    Final price depends on window count, size, and accessibility.
+  </p>
+
+  <p style="margin-top:20px;font-weight:600;">
+    Pressure washing priced based on surface size — request a quick quote.
+  </p>
 </div>
 
-<div class="slider">
-  <div class="slide-track">
-    <img src="work1.jpg"><img src="work2.jpg"><img src="work3.jpg">
-    <img src="work4.jpg"><img src="work5.jpg"><img src="work6.jpg">
-    <img src="work7.jpg"><img src="work8.jpg">
-    <img src="work1.jpg"><img src="work2.jpg">
+<!-- WORK -->
+<div class="section">
+  <h2>Our Work</h2>
+  <div class="carousel">
+    <img src="work1-clean.jpg">
+    <img src="work2-clean.jpg">
+    <img src="work3-clean.jpg">
+    <img src="work4-clean.jpg">
+    <img src="work5-clean.jpg">
+    <img src="work6-clean.jpg">
+    <img src="work7-clean.jpg">
+    <img src="work8-clean.jpg">
   </div>
 </div>
 
-<div class="reviews">
+<!-- REVIEWS -->
+<div class="section">
   <h2>What Customers Say</h2>
-  <div class="review-box" id="reviewBox"></div>
-</div>
+  <div class="reviews">
 
-<div class="map">
-  <h2>Serving Greater Orlando</h2>
-  <iframe src="https://maps.google.com/maps?q=orlando&t=&z=10&output=embed"></iframe>
-  <div class="cities">
-    Orlando • Celebration • Kissimmee • Davenport • Windermere • Winter Garden • Clermont • Ocoee • Dr Phillips • Lake Buena Vista
+    <div class="review active">
+      <div class="stars">★★★★★</div>
+      <p>“Definitely recommend. Excellent service and great prices.”</p>
+      <strong>- Meredith C.</strong>
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>“My windows look incredible. Detail-oriented and professional.”</p>
+      <strong>- Laura A.</strong>
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>“Nick did an amazing job. I’ve already recommended him.”</p>
+      <strong>- Stephen B.</strong>
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>“Fantastic job. Highly recommend this service.”</p>
+      <strong>- Bill N.</strong>
+    </div>
+
   </div>
 </div>
 
-<div class="contact">
-  <h2>Get a Free Quote</h2>
-  <input placeholder="Name"><br>
-  <input placeholder="Phone"><br>
-  <textarea placeholder="What do you need cleaned?"></textarea><br>
-  <button>Submit</button>
+<!-- GUARANTEE -->
+<div class="section">
+  <h2>Our Quality Guarantee</h2>
+  <div class="guarantee-box">
+    <h3>100% Streak-Free Guarantee</h3>
+    <p>If you're not completely satisfied, we’ll come back and fix it.</p>
+    <p>You only pay when you're happy.</p>
+  </div>
 </div>
 
-<div class="callbar">
-  Call Now: 317-219-9751
+<!-- MAP -->
+<div class="section">
+  <h2>Serving Greater Orlando</h2>
+  <div class="map">
+    <iframe src="https://maps.google.com/maps?q=Orlando&t=&z=10&ie=UTF8&iwloc=&output=embed"></iframe>
+  </div>
+  <p>Orlando • Celebration • Kissimmee • Davenport • Windermere • Winter Garden • Clermont • Ocoee • Lake Buena Vista • Dr Phillips</p>
+</div>
+
+<!-- CONTACT -->
+<div class="section">
+  <h2>Get a Free Quote</h2>
+  <form>
+    <input type="text" placeholder="Name">
+    <input type="tel" placeholder="Phone">
+    <textarea placeholder="What do you need cleaned?"></textarea>
+    <button class="btn btn-call">Submit</button>
+  </form>
+</div>
+
+<!-- STICKY -->
+<div class="sticky">
+  <a href="tel:3172199751" style="color:white;text-decoration:none;">📞 Call Now</a>
 </div>
 
 <script>
-const reviews = [
-"Excellent service. My windows are cleaner than brand new. – Meredith C.",
-"Detail-oriented and professional. – Laura A.",
-"Amazing job. – Stephen B.",
-"Highly recommend. – Bill N.",
-"Everything cleaned perfectly. – Crystal V.",
-"Hardworking and thorough. – Rose G."
-];
-
+let reviews = document.querySelectorAll(".review");
 let i = 0;
-function rotate() {
-  document.getElementById("reviewBox").innerText = reviews[i];
+setInterval(() => {
+  reviews[i].classList.remove("active");
   i = (i + 1) % reviews.length;
-}
-rotate();
-setInterval(rotate, 4000);
+  reviews[i].classList.add("active");
+}, 3000);
 </script>
 
 </body>
