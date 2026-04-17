@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nick's Surface Solutions | Orlando</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      color: #222;
+    }
+    .container {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+    .hero {
+      padding: 40px 20px;
+      background: white;
+    }
+    .hero img {
+      max-width: 280px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+    .btn {
+      display: inline-block;
+      margin: 15px 10px;
+      padding: 12px 20px;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .btn.alt {
+      background: #d4a017;
+      color: #000;
+    }
+    .section {
+      padding: 40px 20px;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .offer {
+      background: #d4a017;
+      padding: 30px;
+      border-radius: 8px;
+      color: #000;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    @media (max-width: 600px) {
+      .services {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero container">
+    <img src="logo.jpg" alt="Nick's Surface Solutions Logo">
+    <h1>Crystal Clear Windows in Orlando</h1>
+    <p>Reliable. Affordable. Professional exterior cleaning services.</p>
+    <a href="tel:3172199751" class="btn">Call Now</a>
+    <a href="sms:3172199751" class="btn alt">Get a Free Quote</a>
+  </div>
+
+  <div class="section container">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card">Window Cleaning</div>
+      <div class="card">Screen Cleaning</div>
+      <div class="card">Pressure Washing</div>
+      <div class="card">Solar Panel Cleaning</div>
+    </div>
+  </div>
+
+  <div class="section container">
+    <h2>About Us</h2>
+    <p>Locally owned and operated in Central Florida, Nick’s Surface Solutions delivers top-quality cleaning with attention to detail and customer satisfaction every time.</p>
+  </div>
+
+  <div class="section container">
+    <div class="offer">
+      $30 OFF Your First Cleaning
+    </div>
+  </div>
+
+  <div class="section container">
+    <h2>Contact</h2>
+    <p>Call or text us today to get your free quote.</p>
+    <a href="tel:3172199751" class="btn">Call Now</a>
+  </div>
+
+</body>
+</html>
