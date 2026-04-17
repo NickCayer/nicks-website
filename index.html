@@ -14,7 +14,7 @@
 }
 
 :root {
-  --black: #0a0a0a;
+  --black: #1a1a1a;
   --white: #ffffff;
   --accent: #0ea5e9;
   --accent-dark: #0284c7;
@@ -58,7 +58,7 @@ nav {
 }
 
 .logo {
-  height: 55px;
+  height: 75px;
   width: auto;
 }
 
@@ -259,7 +259,7 @@ nav {
 }
 
 .gallery-item {
-  aspect-ratio: 4/3;
+  aspect-ratio: 3/4;
   overflow: hidden;
   position: relative;
 }
@@ -516,17 +516,15 @@ nav {
 }
 
 .guarantee-inner {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-.guarantee img {
+.guarantee-badge-img {
   width: 120px;
   height: 120px;
   object-fit: contain;
   margin-bottom: 1.5rem;
-  border-radius: 50%;
-  border: 3px solid rgba(255,255,255,0.3);
 }
 
 .guarantee h2 {
@@ -537,6 +535,25 @@ nav {
 .guarantee p {
   font-size: 1.125rem;
   opacity: 0.9;
+}
+
+/* Map */
+.map-section {
+  padding: 0;
+  background: var(--light-gray);
+}
+
+.map-container {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: grayscale(20%) contrast(1.1);
 }
 
 /* Contact */
@@ -665,9 +682,10 @@ footer {
 }
 
 .footer-logo {
-  height: 60px;
+  height: 80px;
+  width: auto;
   margin-bottom: 1.5rem;
-  filter: brightness(0) invert(1);
+  display: inline-block;
 }
 
 .footer-text {
@@ -749,7 +767,7 @@ footer {
   }
   
   .logo {
-    height: 45px;
+    height: 60px;
   }
   
   .promise-grid {
@@ -866,7 +884,7 @@ footer {
     
     <div class="service-box">
       <span class="service-icon">☀️</span>
-      <h3>Solar Panel Cleaning</h3>
+      <h3>Solar Panels</h3>
       <p>Safe, effective cleaning to maximize your system's energy production.</p>
     </div>
   </div>
@@ -907,7 +925,7 @@ footer {
       
       <div class="price-card">
         <div class="price-tier">Pressure Washing</div>
-        <div class="price">$0.25<span> /sq ft</span></div>
+        <div class="price">$99<span> starting</span></div>
         <p class="price-desc">Driveways, patios, siding</p>
         <ul class="price-features">
           <li>Surface-appropriate pressure</li>
@@ -928,37 +946,55 @@ footer {
   <div class="review-grid">
     <div class="review-card">
       <div class="stars">★★★★★</div>
+      <p class="review-text">Nick did a fantastic job. My windows look great. I highly recommend this service to anyone who needs there outside windows cleaned. You will not be disappointed.</p>
+      <div class="review-author">
+        <img src="review1.jpg" alt="" class="review-avatar">
+        <div class="review-name">— Bill Naz</div>
+      </div>
+    </div>
+    
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">I was extremely happy with the work performed by Nick. He explained the process he was using. The how and why it left your windows process. Cleaned the sills and the screens.</p>
+      <div class="review-author">
+        <img src="review1.jpg" alt="" class="review-avatar">
+        <div class="review-name">— Crystal Vincent</div>
+      </div>
+    </div>
+    
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Nick was great! We have old windows and they really needed some TLC. He worked very hard and I'm very pleased with the end results! We will be using him again!</p>
+      <div class="review-author">
+        <img src="review1.jpg" alt="" class="review-avatar">
+        <div class="review-name">— Rose Gregory</div>
+      </div>
+    </div>
+    
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Definitely recommend. Excellent service. Great prices. My windows are cleaner now than when they were brand new</p>
+      <div class="review-author">
+        <img src="review1.jpg" alt="" class="review-avatar">
+        <div class="review-name">— Meredith Callaghan</div>
+      </div>
+    </div>
+    
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">What a wonderful experience. Nick did a wonderful job. I have already shared this with all my neighbors! I will definitely use him again!</p>
+      <div class="review-author">
+        <img src="review1.jpg" alt="" class="review-avatar">
+        <div class="review-name">— Stephen Brenan</div>
+      </div>
+    </div>
+    
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
       <p class="review-text">Excellent service. Windows look brand new.</p>
       <div class="review-author">
         <img src="review1.jpg" alt="" class="review-avatar">
-        <div class="review-name">— Meredith C.</div>
-      </div>
-    </div>
-    
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">Detail-oriented and very professional.</p>
-      <div class="review-author">
-        <img src="review1.jpg" alt="" class="review-avatar">
         <div class="review-name">— Laura A.</div>
-      </div>
-    </div>
-    
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">Amazing job. Highly recommend.</p>
-      <div class="review-author">
-        <img src="review1.jpg" alt="" class="review-avatar">
-        <div class="review-name">— Stephen B.</div>
-      </div>
-    </div>
-    
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">Fantastic results. Will use again.</p>
-      <div class="review-author">
-        <img src="review1.jpg" alt="" class="review-avatar">
-        <div class="review-name">— Bill N.</div>
       </div>
     </div>
   </div>
@@ -966,9 +1002,15 @@ footer {
 
 <section class="guarantee">
   <div class="guarantee-inner">
-    <img src="guarantee-badge.jpg" alt="100% Satisfaction Guarantee">
+    <img src="guarantee-badge.png" alt="100% Satisfaction Guarantee" class="guarantee-badge-img">
     <h2>100% Streak-Free Guarantee</h2>
     <p>We don't leave until you love it.</p>
+  </div>
+</section>
+
+<section class="map-section">
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224444.704971!2d-81.508833!3d28.4810979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e77eddb3e8d6f5%3A0x9c8e9e5e5e5e5e5e!2sOrlando%2C%20FL!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </section>
 
