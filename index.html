@@ -13,6 +13,38 @@
   }
 
   .container {
+    .hero {
+  background: linear-gradient(135deg, #0f172a, #1e40af);
+  color: white;
+  border-radius: 20px;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 70%);
+}
+
+.section {
+  background: #ffffff;
+  color: #1a1a1a;
+  border-radius: 16px;
+  padding: 40px;
+  margin-top: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.highlight {
+  color: #fbbf24;
+}
+
+h1, h2 {
+  letter-spacing: -0.5px;
+}
     max-width: 1000px;
     margin: auto;
     padding: 20px;
@@ -111,7 +143,7 @@
 
   <div class="hero container">
     <img src="nicks_logo.png" alt="Nick's Surface Solutions Logo" style="max-width: 380px; height: auto; margin-bottom: 20px;">
-    <h1>Clear Views. Professional Results.</h1>
+    <h1>Clear Views. <span class="highlight">Professional Results.</span></h1>
     <p>Reliable. Affordable. Professional exterior cleaning services.</p>
     <a href="tel:3172199751" class="btn btn-dark">Call Now</a>
 <a href="sms:3172199751" class="btn btn-gold">Get a Free Quote</a>
