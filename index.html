@@ -6,49 +6,65 @@
 <title>Nick's Surface Solutions | Orlando</title>
 
 <style>
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #f8fafc;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: #0f172a;
+  background: linear-gradient(180deg, #ffffff 0%, #eef2f7 100%);
 }
 
 /* HERO */
 .hero {
-  padding: 120px 20px 80px;
   text-align: center;
-  background:
-    radial-gradient(circle at 80% 10%, rgba(251,191,36,0.35), transparent 40%),
-    linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+  padding: 120px 20px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(251,191,36,0.35), transparent 60%);
+  top: -100px;
+  right: -100px;
+  z-index: 0;
 }
 
 .hero img {
-  max-width: 220px;
-  margin-bottom: 20px;
+  max-width: 340px;
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: multiply;
 }
 
 h1 {
-  font-size: 48px;
-  font-weight: 800;
-  margin-bottom: 10px;
+  font-size: 52px;
+  margin: 20px 0 10px;
 }
 
 .highlight {
   color: #fbbf24;
 }
 
-p.sub {
+.sub {
   color: #64748b;
   margin-bottom: 25px;
 }
 
 .btn {
-  display: inline-block;
-  padding: 12px 20px;
-  margin: 5px;
+  padding: 14px 22px;
   border-radius: 10px;
+  margin: 5px;
   text-decoration: none;
   font-weight: 600;
+  display: inline-block;
 }
 
 .btn-dark {
@@ -61,17 +77,17 @@ p.sub {
   color: black;
 }
 
-/* SECTION */
+/* SECTIONS */
 .section {
-  padding: 80px 20px;
-  max-width: 1000px;
+  padding: 100px 20px;
+  max-width: 1100px;
   margin: auto;
 }
 
 .section h2 {
-  text-align: center;
-  font-size: 32px;
+  font-size: 36px;
   margin-bottom: 40px;
+  text-align: center;
 }
 
 /* SERVICES */
@@ -85,22 +101,50 @@ p.sub {
   background: white;
   padding: 30px;
   border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.2s;
 }
 
-.card h3 {
-  margin-bottom: 10px;
+.card:hover {
+  transform: translateY(-6px);
 }
 
-/* PRICING */
-.pricing {
-  display: grid;
+/* SLIDESHOW */
+.slideshow {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.slides {
+  display: flex;
+  animation: slide 12s infinite;
+}
+
+.slides img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+/* REVIEWS */
+.reviews {
+  display: flex;
+  overflow: auto;
   gap: 20px;
 }
 
-.price-card {
+.review {
+  min-width: 300px;
   background: white;
-  padding: 25px;
+  padding: 20px;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
@@ -114,15 +158,27 @@ form {
 input, textarea {
   padding: 12px;
   border-radius: 8px;
-  border: 1px solid #cbd5f5;
+  border: 1px solid #cbd5e1;
 }
 
 button {
   background: #0f172a;
   color: white;
   padding: 12px;
-  border: none;
   border-radius: 8px;
+  border: none;
+}
+
+/* FADE IN */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.6s;
+}
+
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
 </head>
@@ -130,7 +186,7 @@ button {
 <body>
 
 <!-- HERO -->
-<div class="hero">
+<div class="hero fade">
   <img src="nicks_logo.png">
   <h1>Clear Views. <span class="highlight">Professional Results.</span></h1>
   <p class="sub">Reliable exterior cleaning in Orlando.</p>
@@ -139,53 +195,61 @@ button {
 </div>
 
 <!-- SERVICES -->
-<div class="section">
+<div class="section fade">
   <h2>Our Services</h2>
   <div class="services">
-    <div class="card">
-      <h3>Window Cleaning</h3>
-      <p>Interior & exterior. Streak-free finish.</p>
-    </div>
-    <div class="card">
-      <h3>Pressure Washing</h3>
-      <p>Driveways, patios, siding.</p>
-    </div>
-    <div class="card">
-      <h3>Screen Cleaning</h3>
-      <p>Restore clarity and airflow.</p>
-    </div>
-    <div class="card">
-      <h3>Solar Panel Cleaning</h3>
-      <p>Maximize efficiency.</p>
+    <div class="card">Window Cleaning</div>
+    <div class="card">Pressure Washing</div>
+    <div class="card">Screen Cleaning</div>
+    <div class="card">Solar Panel Cleaning</div>
+  </div>
+</div>
+
+<!-- WORK SLIDESHOW -->
+<div class="section fade">
+  <h2>Our Work</h2>
+  <div class="slideshow">
+    <div class="slides">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952">
+      <img src="https://images.unsplash.com/photo-1598300053653-1e4e2a8e7e9c">
     </div>
   </div>
 </div>
 
-<!-- PRICING -->
-<div class="section">
-  <h2>Pricing</h2>
-  <div class="pricing">
-    <div class="price-card">
-      <strong>Window Cleaning</strong><br>
-      From $129
-    </div>
-    <div class="price-card">
-      <strong>Pressure Washing</strong><br>
-      From $149
-    </div>
+<!-- REVIEWS -->
+<div class="section fade">
+  <h2>Customer Reviews</h2>
+  <div class="reviews">
+    <div class="review">⭐️⭐️⭐️⭐️⭐️<br>“Amazing job. Windows spotless.”</div>
+    <div class="review">⭐️⭐️⭐️⭐️⭐️<br>“Super professional and fast.”</div>
+    <div class="review">⭐️⭐️⭐️⭐️⭐️<br>“Best cleaning service I’ve used.”</div>
   </div>
 </div>
 
 <!-- CONTACT -->
-<div class="section">
+<div class="section fade">
   <h2>Get a Quote</h2>
   <form>
-    <input placeholder="Your Name">
-    <input placeholder="Phone Number">
+    <input placeholder="Name">
+    <input placeholder="Phone">
     <textarea placeholder="What do you need cleaned?"></textarea>
     <button>Submit</button>
   </form>
 </div>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  faders.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add('visible');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
