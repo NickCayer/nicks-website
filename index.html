@@ -38,7 +38,7 @@ h1, h2, h3, .display {
   line-height: 1.1;
 }
 
-/* Navigation */
+/* Navigation - Hidden initially */
 nav {
   position: fixed;
   top: 0;
@@ -47,6 +47,12 @@ nav {
   border-bottom: 1px solid #e5e7eb;
   z-index: 1000;
   padding: 1rem 2rem;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+nav.visible {
+  transform: translateY(0);
 }
 
 .nav-inner {
@@ -57,8 +63,8 @@ nav {
   align-items: center;
 }
 
-.logo {
-  height: 75px;
+.logo-nav {
+  height: 55px;
   width: auto;
 }
 
@@ -96,20 +102,52 @@ nav {
   background: var(--accent);
 }
 
-/* Hero */
+/* Hero with full-width logo */
 .hero {
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 7rem 2rem 4rem;
+  padding: 2rem 2rem 4rem;
   background: var(--white);
+  position: relative;
+}
+
+.hero-logo-full {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  display: block;
+  animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-inner {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  animation: fadeInUp 1s ease 0.3s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-badge {
@@ -121,6 +159,16 @@ nav {
   font-size: 0.875rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 .hero h1 {
@@ -157,6 +205,23 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
 }
 
 .btn-primary {
@@ -166,6 +231,8 @@ nav {
 
 .btn-primary:hover {
   background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
 }
 
 .btn-secondary {
@@ -176,6 +243,7 @@ nav {
 
 .btn-secondary:hover {
   background: var(--light-gray);
+  transform: translateY(-2px);
 }
 
 /* The Promise */
@@ -192,6 +260,7 @@ nav {
 
 .promise-header {
   margin-bottom: 3rem;
+  animation: fadeInUp 0.8s ease;
 }
 
 .promise-header h2 {
@@ -214,7 +283,13 @@ nav {
 .promise-item {
   border-top: 3px solid var(--accent);
   padding-top: 1.5rem;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
 }
+
+.promise-item:nth-child(1) { animation-delay: 0.1s; }
+.promise-item:nth-child(2) { animation-delay: 0.2s; }
+.promise-item:nth-child(3) { animation-delay: 0.3s; }
 
 .promise-num {
   font-family: 'Space Grotesk', sans-serif;
@@ -269,12 +344,12 @@ nav {
   height: 100%;
   object-fit: cover;
   filter: grayscale(100%);
-  transition: all 0.4s;
+  transition: all 0.6s ease;
 }
 
 .gallery-item:hover img {
   filter: grayscale(0%);
-  transform: scale(1.03);
+  transform: scale(1.1);
 }
 
 /* Services */
@@ -309,12 +384,21 @@ nav {
   padding: 2rem;
   border-radius: 12px;
   position: relative;
-  transition: all 0.2s;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
 }
+
+.service-box:nth-child(1) { animation-delay: 0.1s; }
+.service-box:nth-child(2) { animation-delay: 0.2s; }
+.service-box:nth-child(3) { animation-delay: 0.3s; }
+.service-box:nth-child(4) { animation-delay: 0.4s; }
 
 .service-box:hover {
   background: var(--white);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  transform: translateY(-5px);
 }
 
 .service-box h3 {
@@ -334,6 +418,11 @@ nav {
   right: 1.5rem;
   font-size: 2rem;
   opacity: 0.3;
+  transition: transform 0.3s;
+}
+
+.service-box:hover .service-icon {
+  transform: scale(1.2) rotate(10deg);
 }
 
 /* Pricing */
@@ -373,13 +462,21 @@ nav {
   border-radius: 12px;
   text-align: center;
   position: relative;
-  transition: all 0.2s;
+  transition: all 0.3s ease;
   border: 1px solid transparent;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
 }
+
+.price-card:nth-child(1) { animation-delay: 0.1s; }
+.price-card:nth-child(2) { animation-delay: 0.2s; }
+.price-card:nth-child(3) { animation-delay: 0.3s; }
 
 .price-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  transform: translateY(-5px);
 }
 
 .price-card.featured {
@@ -399,6 +496,12 @@ nav {
   border-radius: 50px;
   font-size: 0.75rem;
   font-weight: 600;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-5px); }
 }
 
 .price-tier {
@@ -471,6 +574,22 @@ nav {
   padding: 2rem;
   border-radius: 12px;
   position: relative;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.review-card:nth-child(1) { animation-delay: 0.1s; }
+.review-card:nth-child(2) { animation-delay: 0.2s; }
+.review-card:nth-child(3) { animation-delay: 0.3s; }
+.review-card:nth-child(4) { animation-delay: 0.4s; }
+.review-card:nth-child(5) { animation-delay: 0.5s; }
+.review-card:nth-child(6) { animation-delay: 0.6s; }
+
+.review-card:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
 }
 
 .stars {
@@ -500,6 +619,11 @@ nav {
   height: 45px;
   border-radius: 50%;
   object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.review-card:hover .review-avatar {
+  transform: scale(1.1);
 }
 
 .review-name {
@@ -518,13 +642,7 @@ nav {
 .guarantee-inner {
   max-width: 800px;
   margin: 0 auto;
-}
-
-.guarantee-badge-img {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.8s ease;
 }
 
 .guarantee h2 {
@@ -554,6 +672,45 @@ nav {
   height: 100%;
   border: none;
   filter: grayscale(20%) contrast(1.1);
+}
+
+.service-areas {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.service-areas h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--black);
+}
+
+.areas-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.area-tag {
+  background: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  color: var(--gray);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.area-tag:hover {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
 /* Contact */
@@ -587,12 +744,18 @@ nav {
 
 .contact-method:hover {
   color: var(--accent);
+  padding-left: 0.5rem;
 }
 
 .contact-icon {
   font-size: 1.5rem;
   width: 40px;
   text-align: center;
+  transition: transform 0.3s;
+}
+
+.contact-method:hover .contact-icon {
+  transform: scale(1.2);
 }
 
 .contact-detail h3 {
@@ -667,25 +830,30 @@ nav {
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-submit:hover {
   background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
 }
 
 /* Footer */
 footer {
   background: var(--black);
   color: var(--white);
-  padding: 3rem 2rem 7rem;
+  padding: 4rem 2rem 8rem;
   text-align: center;
 }
 
 .footer-logo {
-  height: 80px;
-  width: auto;
-  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 2rem;
   display: inline-block;
+  animation: fadeInUp 1s ease;
 }
 
 .footer-text {
@@ -728,6 +896,7 @@ footer {
 
 .sticky-btn:first-child:hover {
   background: var(--accent);
+  transform: translateY(-2px);
 }
 
 .sticky-btn:last-child {
@@ -737,6 +906,7 @@ footer {
 
 .sticky-btn:last-child:hover {
   background: #e5e7eb;
+  transform: translateY(-2px);
 }
 
 /* Responsive */
@@ -762,12 +932,12 @@ footer {
     display: none;
   }
   
-  .hero h1 {
-    font-size: 2.25rem;
+  .hero-logo-full {
+    max-width: 300px;
   }
   
-  .logo {
-    height: 60px;
+  .hero h1 {
+    font-size: 2.25rem;
   }
   
   .promise-grid {
@@ -790,9 +960,9 @@ footer {
 </head>
 <body>
 
-<nav>
+<nav id="navbar">
   <div class="nav-inner">
-    <img src="logo.png" alt="Nick's Surface Solutions" class="logo">
+    <img src="logo.png" alt="Nick's Surface Solutions" class="logo-nav">
     <div class="nav-contact">
       <a href="tel:3172199751" class="phone">(317) 219-9751</a>
       <a href="#contact" class="btn-nav">Get Quote</a>
@@ -801,6 +971,7 @@ footer {
 </nav>
 
 <section class="hero">
+  <img src="logo.png" alt="Nick's Surface Solutions" class="hero-logo-full">
   <div class="hero-inner">
     <span class="hero-badge">★ 5-Star Rated in Orlando</span>
     <h1>Professional Window Cleaning <span>&</span> Pressure Washing</h1>
@@ -1002,7 +1173,6 @@ footer {
 
 <section class="guarantee">
   <div class="guarantee-inner">
-    <img src="guarantee-badge.png" alt="100% Satisfaction Guarantee" class="guarantee-badge-img">
     <h2>100% Streak-Free Guarantee</h2>
     <p>We don't leave until you love it.</p>
   </div>
@@ -1011,6 +1181,27 @@ footer {
 <section class="map-section">
   <div class="map-container">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224444.704971!2d-81.508833!3d28.4810979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e77eddb3e8d6f5%3A0x9c8e9e5e5e5e5e5e!2sOrlando%2C%20FL!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  
+  <div class="service-areas">
+    <h3>Service Areas</h3>
+    <div class="areas-grid">
+      <span class="area-tag">Orlando</span>
+      <span class="area-tag">Winter Park</span>
+      <span class="area-tag">Celebration</span>
+      <span class="area-tag">Kissimmee</span>
+      <span class="area-tag">Windermere</span>
+      <span class="area-tag">Winter Garden</span>
+      <span class="area-tag">Clermont</span>
+      <span class="area-tag">Ocoee</span>
+      <span class="area-tag">Lake Buena Vista</span>
+      <span class="area-tag">Davenport</span>
+      <span class="area-tag">Altamonte Springs</span>
+      <span class="area-tag">Longwood</span>
+      <span class="area-tag">Apopka</span>
+      <span class="area-tag">Sanford</span>
+      <span class="area-tag">Oviedo</span>
+    </div>
   </div>
 </section>
 
@@ -1095,6 +1286,18 @@ footer {
   <a href="tel:3172199751" class="sticky-btn">Call Now</a>
   <a href="#contact" class="sticky-btn">Get Quote</a>
 </div>
+
+<script>
+// Show navbar on scroll
+window.addEventListener('scroll', function() {
+  const navbar = document.getElementById('navbar');
+  if (window.scrollY > 100) {
+    navbar.classList.add('visible');
+  } else {
+    navbar.classList.remove('visible');
+  }
+});
+</script>
 
 </body>
 </html>
