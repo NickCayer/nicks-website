@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nick's Surface Solutions | Window & Pressure Washing | Orlando</title>
+<title>Nick's Surface Solutions | Orlando Window Cleaning & Pressure Washing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 * {
   margin: 0;
@@ -15,32 +14,26 @@
 }
 
 :root {
-  --primary: #1e3a5f;
-  --primary-dark: #152a45;
-  --accent: #0ea5e9;
-  --accent-light: #38bdf8;
+  --black: #0a0a0a;
   --white: #ffffff;
-  --gray-50: #f8fafc;
-  --gray-100: #f1f5f9;
-  --gray-200: #e2e8f0;
-  --gray-600: #475569;
-  --gray-800: #1e293b;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
-}
-
-html {
-  scroll-behavior: smooth;
+  --accent: #ff3b3b;
+  --gray: #888888;
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', sans-serif;
   background: var(--white);
-  color: var(--gray-800);
-  line-height: 1.6;
+  color: var(--black);
+  line-height: 1.5;
   overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, .display {
+  font-family: 'Bebas Neue', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
 }
 
 /* Navigation */
@@ -48,397 +41,387 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255,255,255,0.98);
-  backdrop-filter: blur(10px);
+  background: var(--white);
+  border-bottom: 2px solid var(--black);
   z-index: 1000;
-  border-bottom: 1px solid var(--gray-200);
-  padding: 0.75rem 0;
+  padding: 1rem 2rem;
 }
 
-.nav-container {
-  max-width: 1200px;
+.nav-inner {
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  height: 50px;
+  height: 45px;
   width: auto;
-  display: block;
 }
 
-.nav-links {
+.nav-contact {
   display: flex;
-  gap: 2.5rem;
-  list-style: none;
+  align-items: center;
+  gap: 2rem;
 }
 
-.nav-links a {
+.phone {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  color: var(--black);
   text-decoration: none;
-  color: var(--gray-600);
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  color: var(--primary);
+.phone:hover {
+  color: var(--accent);
 }
 
-/* Hero Section */
+.btn-nav {
+  background: var(--black);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+}
+
+.btn-nav:hover {
+  background: var(--accent);
+}
+
+/* Hero */
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  padding: 8rem 2rem 4rem;
+  background: var(--white);
   position: relative;
-  overflow: hidden;
-  padding: 7rem 2rem 5rem;
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+.hero-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  max-width: 800px;
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.hero-logo {
-  width: 180px;
-  height: auto;
-  margin-bottom: 2rem;
-  filter: brightness(0) invert(1) drop-shadow(0 4px 20px rgba(0,0,0,0.2));
+.hero-logo-large {
+  height: 120px;
+  width: auto;
 }
 
 .hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(14, 165, 233, 0.2);
-  color: var(--accent-light);
+  background: var(--accent);
+  color: var(--white);
   padding: 0.5rem 1rem;
-  border-radius: 50px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  border: 1px solid rgba(14, 165, 233, 0.3);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transform: rotate(-2deg);
+  display: inline-block;
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 800;
-  color: var(--white);
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.02em;
+  font-size: clamp(4rem, 12vw, 10rem);
+  margin-bottom: 2rem;
+  max-width: 900px;
 }
 
 .hero h1 span {
-  color: var(--accent-light);
+  color: var(--accent);
 }
 
-.hero-subtitle {
-  font-size: 1.25rem;
-  color: rgba(255,255,255,0.85);
-  margin-bottom: 2.5rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.hero-text {
+  max-width: 400px;
+  font-size: 1.1rem;
+  color: var(--gray);
 }
 
 .hero-cta {
   display: flex;
   gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 
 .btn {
-  padding: 1rem 2rem;
-  border-radius: 10px;
-  font-weight: 600;
+  padding: 1.25rem 2.5rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.3s;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
+  border: 2px solid var(--black);
+  transition: all 0.2s;
+  display: inline-block;
 }
 
 .btn-primary {
-  background: var(--accent);
+  background: var(--black);
   color: var(--white);
-  box-shadow: 0 10px 30px -5px rgba(14, 165, 233, 0.4);
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 20px 40px -5px rgba(14, 165, 233, 0.5);
-  background: var(--accent-light);
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .btn-secondary {
-  background: rgba(255,255,255,0.1);
-  color: var(--white);
-  border: 1px solid rgba(255,255,255,0.25);
-  backdrop-filter: blur(10px);
+  background: var(--white);
+  color: var(--black);
 }
 
 .btn-secondary:hover {
-  background: rgba(255,255,255,0.2);
-  transform: translateY(-2px);
-}
-
-/* Section Styles */
-section {
-  padding: 5rem 2rem;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.section-tag {
-  display: inline-block;
-  color: var(--accent);
-  font-weight: 700;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.75rem;
-}
-
-.section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  color: var(--primary);
-  margin-bottom: 1rem;
-  letter-spacing: -0.02em;
-}
-
-.section-subtitle {
-  color: var(--gray-600);
-  font-size: 1.125rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* Promise Section (Pink's Style) */
-.promise-section {
-  background: var(--primary);
+  background: var(--black);
   color: var(--white);
-  padding: 5rem 2rem;
+}
+
+/* The Promise */
+.promise {
+  background: var(--black);
+  color: var(--white);
+  padding: 6rem 2rem;
+}
+
+.promise-inner {
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .promise-header {
-  text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .promise-header h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
+  font-size: clamp(3rem, 8vw, 6rem);
   margin-bottom: 1rem;
 }
 
 .promise-header p {
   font-size: 1.25rem;
-  opacity: 0.9;
+  color: var(--gray);
   max-width: 600px;
-  margin: 0 auto;
 }
 
 .promise-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
 }
 
 .promise-item {
-  text-align: center;
-  padding: 2rem;
+  border-top: 4px solid var(--accent);
+  padding-top: 2rem;
 }
 
-.promise-number {
+.promise-num {
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 4rem;
-  font-weight: 800;
   color: var(--accent);
-  opacity: 0.3;
   line-height: 1;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .promise-item h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .promise-item p {
-  opacity: 0.85;
-  line-height: 1.7;
+  color: var(--gray);
+  font-size: 1rem;
 }
 
-/* Services Section */
+/* Gallery - Full Bleed */
+.gallery-section {
+  padding: 6rem 0;
+}
+
+.gallery-header {
+  padding: 0 2rem;
+  max-width: 1400px;
+  margin: 0 auto 3rem;
+}
+
+.gallery-header h2 {
+  font-size: clamp(3rem, 8vw, 6rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.gallery-item {
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: all 0.4s;
+}
+
+.gallery-item:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Services */
 .services {
-  background: var(--gray-50);
+  padding: 6rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.services-header {
+  margin-bottom: 4rem;
+}
+
+.services-header h2 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin-bottom: 1rem;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--black);
 }
 
-.service-card {
+.service-box {
   background: var(--white);
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-  transition: all 0.3s;
+  padding: 3rem;
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--gray-200);
 }
 
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-light));
-  transform: scaleX(0);
-  transition: transform 0.3s;
+.service-box h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-xl);
-  border-color: var(--accent);
-}
-
-.service-card:hover::before {
-  transform: scaleX(1);
+.service-box p {
+  color: var(--gray);
+  max-width: 300px;
 }
 
 .service-icon {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.75rem;
-  margin-bottom: 1.5rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 3rem;
+  opacity: 0.2;
 }
 
-.service-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  color: var(--primary);
+/* Pricing */
+.pricing {
+  background: var(--black);
+  color: var(--white);
+  padding: 6rem 2rem;
 }
 
-.service-card p {
-  color: var(--gray-600);
-  line-height: 1.7;
-}
-
-/* Pricing Section */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
+.pricing-inner {
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-.price-card {
-  background: var(--white);
-  border: 2px solid var(--gray-200);
-  border-radius: 20px;
-  padding: 2.5rem;
+.pricing-header {
   text-align: center;
-  transition: all 0.3s;
+  margin-bottom: 4rem;
+}
+
+.pricing-header h2 {
+  font-size: clamp(3rem, 8vw, 6rem);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.price-card {
+  border: 2px solid var(--gray);
+  padding: 3rem 2rem;
+  text-align: center;
   position: relative;
+  transition: all 0.3s;
+}
+
+.price-card:hover {
+  border-color: var(--accent);
 }
 
 .price-card.featured {
   border-color: var(--accent);
-  background: linear-gradient(180deg, var(--white) 0%, rgba(14, 165, 233, 0.05) 100%);
-  transform: scale(1.05);
+  background: rgba(255, 59, 59, 0.05);
 }
 
-.price-card.featured::after {
-  content: 'Most Popular';
+.price-card.featured::before {
+  content: 'BEST VALUE';
   position: absolute;
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--accent);
   color: var(--white);
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
+  padding: 0.25rem 1rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
 }
 
-.price-card:hover {
-  border-color: var(--accent);
-  box-shadow: var(--shadow-lg);
-}
-
-.price-label {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--primary);
+.price-tier {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 
 .price {
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--primary);
+  font-size: 4rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
 .price span {
   font-size: 1rem;
-  color: var(--gray-600);
-  font-weight: 500;
+  color: var(--gray);
+  font-weight: 400;
 }
 
 .price-desc {
-  color: var(--gray-600);
-  margin-bottom: 1.5rem;
+  color: var(--gray);
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--gray);
 }
 
 .price-features {
@@ -447,73 +430,41 @@ section {
 }
 
 .price-features li {
-  padding: 0.5rem 0;
-  color: var(--gray-600);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #333;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .price-features li::before {
-  content: '✓';
+  content: '→';
   color: var(--accent);
   font-weight: 700;
 }
 
-/* Gallery Section - Clean Style (No Hover Text) */
-.gallery {
-  background: var(--white);
-  padding: 5rem 0;
-}
-
-.gallery .container {
-  padding: 0 2rem;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+/* Reviews */
+.reviews {
+  padding: 6rem 2rem;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-.gallery-item {
-  aspect-ratio: 4/3;
-  overflow: hidden;
-  border-radius: 8px;
-  position: relative;
+.reviews-header h2 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin-bottom: 3rem;
 }
 
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.05);
-}
-
-/* Reviews Section */
-.reviews {
-  background: var(--gray-50);
-}
-
-.reviews-grid {
+.review-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
 .review-card {
-  background: var(--white);
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: var(--shadow);
+  border: 2px solid var(--black);
+  padding: 2.5rem;
   position: relative;
-  border: 1px solid var(--gray-200);
 }
 
 .review-card::before {
@@ -521,32 +472,32 @@ section {
   position: absolute;
   top: 1rem;
   right: 1.5rem;
-  font-size: 4rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 6rem;
   color: var(--accent);
-  opacity: 0.15;
-  font-family: Georgia, serif;
+  opacity: 0.3;
   line-height: 1;
 }
 
 .stars {
-  color: #f59e0b;
-  font-size: 1.25rem;
+  color: var(--accent);
+  font-size: 1.5rem;
   margin-bottom: 1rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.2em;
 }
 
 .review-text {
-  color: var(--gray-800);
   font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-  font-style: italic;
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
 .review-author {
   display: flex;
   align-items: center;
   gap: 1rem;
+  border-top: 2px solid var(--black);
+  padding-top: 1.5rem;
 }
 
 .review-avatar {
@@ -557,31 +508,25 @@ section {
   border: 2px solid var(--accent);
 }
 
-.review-info h4 {
+.review-name {
   font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 0.25rem;
 }
 
-.review-info span {
+.review-location {
+  color: var(--gray);
   font-size: 0.875rem;
-  color: var(--gray-600);
 }
 
-/* Guarantee Section */
+/* Guarantee */
 .guarantee {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  background: var(--accent);
   color: var(--white);
+  padding: 6rem 2rem;
   text-align: center;
-  position: relative;
-  overflow: hidden;
-  padding: 5rem 2rem;
 }
 
-.guarantee-content {
-  position: relative;
-  z-index: 1;
-  max-width: 600px;
+.guarantee-inner {
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -590,20 +535,12 @@ section {
   height: 150px;
   object-fit: contain;
   margin-bottom: 2rem;
-  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
-  animation: float 3s ease-in-out infinite;
   border-radius: 50%;
-  border: 4px solid rgba(255,255,255,0.2);
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  border: 4px solid var(--white);
 }
 
 .guarantee h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
+  font-size: clamp(2.5rem, 6vw, 4rem);
   margin-bottom: 1rem;
 }
 
@@ -612,147 +549,66 @@ section {
   opacity: 0.9;
 }
 
-/* Map Section */
-.map-section {
-  padding: 0;
-  background: var(--gray-50);
-}
-
-.map-container {
-  position: relative;
-  height: 400px;
-  overflow: hidden;
-}
-
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  filter: grayscale(20%) contrast(1.1);
-}
-
-.map-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, var(--gray-50) 0%, transparent 100%);
-  height: 100px;
-  pointer-events: none;
-}
-
-.service-areas {
-  text-align: center;
-  padding: 3rem 2rem;
-}
-
-.service-areas h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--primary);
-}
-
-.areas-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.area-tag {
-  background: var(--white);
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  color: var(--gray-600);
-  border: 1px solid var(--gray-200);
-  transition: all 0.3s;
-}
-
-.area-tag:hover {
-  background: var(--accent);
-  color: var(--white);
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* Contact Section */
+/* Contact */
 .contact {
-  background: var(--white);
+  padding: 6rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: start;
 }
 
-.contact-info h3 {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  color: var(--primary);
-}
-
-.contact-info > p {
-  color: var(--gray-600);
+.contact-info h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
   margin-bottom: 2rem;
-  font-size: 1.1rem;
-}
-
-.contact-methods {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
 }
 
 .contact-method {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1.5rem;
-  background: var(--gray-50);
-  border-radius: 12px;
-  transition: all 0.3s;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 2px solid var(--black);
   text-decoration: none;
   color: inherit;
-  border: 1px solid var(--gray-200);
+  transition: all 0.2s;
 }
 
 .contact-method:hover {
-  background: var(--primary);
+  background: var(--black);
   color: var(--white);
-  transform: translateX(5px);
-  border-color: var(--primary);
-}
-
-.contact-method:hover .contact-icon {
-  background: var(--white);
-  color: var(--primary);
+  margin: 0 -1rem;
+  padding: 1.5rem 1rem;
 }
 
 .contact-icon {
-  width: 50px;
-  height: 50px;
-  background: var(--white);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  box-shadow: var(--shadow);
-  transition: all 0.3s;
+  font-size: 2rem;
+  width: 60px;
+  text-align: center;
+}
+
+.contact-detail h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+  margin-bottom: 0.25rem;
+}
+
+.contact-detail p {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.75rem;
 }
 
 .contact-form {
-  background: var(--gray-50);
-  padding: 2.5rem;
-  border-radius: 20px;
-  border: 1px solid var(--gray-200);
+  background: var(--black);
+  color: var(--white);
+  padding: 3rem;
 }
 
 .form-group {
@@ -761,23 +617,24 @@ section {
 
 .form-group label {
   display: block;
-  font-weight: 600;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  color: var(--primary);
-  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
   width: 100%;
-  padding: 0.875rem;
-  border: 2px solid var(--gray-200);
-  border-radius: 10px;
-  font-family: inherit;
+  padding: 1rem;
+  border: 2px solid #333;
+  background: transparent;
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
   font-size: 1rem;
-  transition: all 0.3s;
-  background: var(--white);
+  transition: all 0.2s;
 }
 
 .form-group input:focus,
@@ -785,540 +642,456 @@ section {
 .form-group select:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
 }
 
 .form-group textarea {
+  min-height: 120px;
   resize: vertical;
-  min-height: 100px;
 }
 
-/* Sticky CTA */
-.sticky-cta {
+.btn-submit {
+  width: 100%;
+  padding: 1.25rem;
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-submit:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+/* Footer */
+footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 4rem 2rem 8rem;
+  text-align: center;
+}
+
+.footer-logo {
+  height: 80px;
+  margin-bottom: 2rem;
+  filter: brightness(0) invert(1);
+}
+
+.footer-text {
+  color: var(--gray);
+  font-size: 0.875rem;
+}
+
+/* Sticky Bottom */
+.sticky-bottom {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   background: var(--white);
-  padding: 1rem;
-  box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
-  z-index: 999;
+  border-top: 2px solid var(--black);
+  padding: 1rem 2rem;
   display: flex;
-  gap: 1rem;
   justify-content: center;
-  border-top: 1px solid var(--gray-200);
+  gap: 1rem;
+  z-index: 999;
 }
 
 .sticky-btn {
   flex: 1;
-  max-width: 200px;
-  padding: 0.875rem;
-  border-radius: 10px;
-  font-weight: 700;
-  text-decoration: none;
+  max-width: 300px;
+  padding: 1rem;
   text-align: center;
-  transition: all 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border: 2px solid var(--black);
+  transition: all 0.2s;
 }
 
-.sticky-btn-call {
-  background: var(--primary);
+.sticky-btn:first-child {
+  background: var(--black);
   color: var(--white);
 }
 
-.sticky-btn-call:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
-}
-
-.sticky-btn-text {
+.sticky-btn:first-child:hover {
   background: var(--accent);
+  border-color: var(--accent);
+}
+
+.sticky-btn:last-child {
+  background: var(--white);
+  color: var(--black);
+}
+
+.sticky-btn:last-child:hover {
+  background: var(--black);
   color: var(--white);
-}
-
-.sticky-btn-text:hover {
-  background: var(--accent-light);
-  transform: translateY(-2px);
-}
-
-/* Footer */
-footer {
-  background: var(--primary-dark);
-  color: var(--white);
-  padding: 3rem 2rem 6rem;
-  text-align: center;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-logo {
-  height: 60px;
-  width: auto;
-  margin-bottom: 1.5rem;
-  filter: brightness(0) invert(1);
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  color: rgba(255,255,255,0.7);
-  text-decoration: none;
-  transition: color 0.3s;
-  font-weight: 500;
-}
-
-.footer-links a:hover {
-  color: var(--accent-light);
-}
-
-.copyright {
-  color: rgba(255,255,255,0.5);
-  font-size: 0.9rem;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .promise-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+  
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .services-grid,
+  .review-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .nav-links {
+  .nav-contact {
     display: none;
   }
   
-  .hero h1 {
-    font-size: 2.25rem;
+  .hero-top {
+    flex-direction: column;
   }
   
-  .hero-logo {
-    width: 140px;
+  .hero-logo-large {
+    height: 80px;
   }
   
-  .price-card.featured {
-    transform: scale(1);
+  .hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
   }
   
-  .contact-grid {
-    grid-template-columns: 1fr;
+  .promise-grid {
     gap: 2rem;
   }
   
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+  .service-box {
+    padding: 2rem;
   }
   
-  section, .promise-section, .guarantee {
-    padding: 3rem 1.5rem;
+  .review-grid {
+    grid-template-columns: 1fr;
   }
   
-  .gallery {
-    padding: 3rem 0;
+  .contact-form {
+    padding: 2rem;
   }
   
-  .logo {
-    height: 40px;
-  }
-  
-  .promise-number {
-    font-size: 3rem;
+  .sticky-btn {
+    font-size: 1rem;
   }
 }
-
-/* Utility */
-.text-center { text-align: center; }
-.mt-2 { margin-top: 2rem; }
 </style>
 </head>
-
 <body>
 
-<!-- Navigation -->
 <nav>
-  <div class="nav-container">
-    <a href="#"><img src="logo.png" alt="Nick's Surface Solutions" class="logo"></a>
-    <ul class="nav-links">
-      <li><a href="#promise">Our Promise</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <div class="nav-inner">
+    <img src="logo.png" alt="Nick's Surface Solutions" class="logo">
+    <div class="nav-contact">
+      <a href="tel:3172199751" class="phone">(317) 219-9751</a>
+      <a href="#contact" class="btn-nav">Get Quote</a>
+    </div>
   </div>
 </nav>
 
-<!-- Hero Section -->
 <section class="hero">
-  <div class="hero-content">
-    <img src="logo.png" alt="Nick's Surface Solutions" class="hero-logo">
-    <div class="hero-badge">★ 5-Star Rated in Orlando</div>
-    <h1>Crystal Clear Windows <span>&</span> Professional Pressure Washing</h1>
-    <p class="hero-subtitle">Nick's Surface Solutions brings the sparkle back to your home or business. Serving Orlando with premium exterior cleaning services.</p>
-    <div class="hero-cta">
-      <a href="tel:3172199751" class="btn btn-primary">📞 Call (317) 219-9751</a>
-      <a href="#contact" class="btn btn-secondary">Get Free Quote</a>
+  <div class="hero-inner">
+    <div class="hero-top">
+      <img src="logo.png" alt="Nick's Surface Solutions" class="hero-logo-large">
+      <span class="hero-badge">5-Star Rated • Orlando Area</span>
+    </div>
+    
+    <h1>We Clean <span>Everything</span> Outside Your Home</h1>
+    
+    <div class="hero-bottom">
+      <p class="hero-text">Windows so clear you'll forget they're there. Pressure washing that makes concrete look new. That's the Nick's Surface Solutions difference.</p>
+      <div class="hero-cta">
+        <a href="tel:3172199751" class="btn btn-primary">Call Now</a>
+        <a href="#contact" class="btn btn-secondary">Text Photos</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Promise Section (Pink's Style) -->
-<section id="promise" class="promise-section">
-  <div class="promise-header">
-    <h2>The Nick's Surface Solutions Promise</h2>
-    <p>Your time should never be taken for granted. That's why we'll always:</p>
+<section class="promise" id="promise">
+  <div class="promise-inner">
+    <div class="promise-header">
+      <h2>Our Promise</h2>
+      <p>Your time matters. Your property matters. Here's how we prove it:</p>
+    </div>
+    
+    <div class="promise-grid">
+      <div class="promise-item">
+        <div class="promise-num">.01</div>
+        <h3>We Show Up</h3>
+        <p>Early, actually. 10 minutes before we said we would. Respect for your schedule is non-negotiable.</p>
+      </div>
+      
+      <div class="promise-item">
+        <div class="promise-num">.02</div>
+        <h3>We Do The Work</h3>
+        <p>No cutting corners. No "good enough." We clean it like we own it, every single time.</p>
+      </div>
+      
+      <div class="promise-item">
+        <div class="promise-num">.03</div>
+        <h3>We Leave It Better</h3>
+        <p>Spotless windows. Clean frames. No mess left behind. That's the minimum.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section" id="gallery">
+  <div class="gallery-header">
+    <h2>The Work</h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="work1.jpg" alt=""></div>
+    <div class="gallery-item"><img src="work2.jpg" alt=""></div>
+    <div class="gallery-item"><img src="work3.jpg" alt=""></div>
+    <div class="gallery-item"><img src="work4.jpg" alt=""></div>
+    <div class="gallery-item"><img src="work5.jpg" alt=""></div>
+    <div class="gallery-item"><img src="work6.jpg" alt=""></div>
+    <div class="gallery-item"><img src="work7.jpg" alt=""></div>
+    <div class="gallery-item"><img src="work8.jpg" alt=""></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="services-header">
+    <h2>What We Do</h2>
   </div>
   
-  <div class="promise-grid">
-    <div class="promise-item">
-      <div class="promise-number">.01</div>
-      <h3>Show Up On Time</h3>
-      <p>Which really means 10 minutes early. We respect your schedule and know your time is valuable.</p>
+  <div class="services-grid">
+    <div class="service-box">
+      <span class="service-icon">🪟</span>
+      <h3>Window Cleaning</h3>
+      <p>Interior, exterior, tracks, sills, screens. Streak-free guarantee or we come back free.</p>
     </div>
     
-    <div class="promise-item">
-      <div class="promise-number">.02</div>
-      <h3>Do What We Say</h3>
-      <p>Our word is everything. We aim to exceed expectations in every aspect of the job, every single time.</p>
+    <div class="service-box">
+      <span class="service-icon">💦</span>
+      <h3>Pressure Washing</h3>
+      <p>Driveways, patios, siding, decks. The right pressure for every surface. No damage, just clean.</p>
     </div>
     
-    <div class="promise-item">
-      <div class="promise-number">.03</div>
-      <h3>Leave It Better</h3>
-      <p>Your property will be left cleaner than we found it. We treat your home like it's our own.</p>
+    <div class="service-box">
+      <span class="service-icon">🔲</span>
+      <h3>Screen Cleaning</h3>
+      <p>Remove the grime, pollen, and dust. We clean them right and reinstall them tight.</p>
+    </div>
+    
+    <div class="service-box">
+      <span class="service-icon">☀️</span>
+      <h3>Solar Panels</h3>
+      <p>Maximize your energy output. Safe, effective cleaning that protects your investment.</p>
     </div>
   </div>
 </section>
 
-<!-- Services Section -->
-<section id="services" class="services">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">What We Do</span>
-      <h2 class="section-title">Premium Exterior Cleaning Services</h2>
-      <p class="section-subtitle">From sparkling windows to spotless surfaces, Nick's Surface Solutions handles it all with professional care.</p>
-    </div>
-    
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">🪟</div>
-        <h3>Window Cleaning</h3>
-        <p>Interior and exterior window cleaning with our streak-free guarantee. We clean frames, sills, and tracks for a complete finish.</p>
-      </div>
-      
-      <div class="service-card">
-        <div class="service-icon">💦</div>
-        <h3>Pressure Washing</h3>
-        <p>Restore driveways, patios, siding, and decks to like-new condition. Safe, effective cleaning for all exterior surfaces.</p>
-      </div>
-      
-      <div class="service-card">
-        <div class="service-icon">🔲</div>
-        <h3>Screen Cleaning</h3>
-        <p>Remove dirt, pollen, and grime from your window screens. We clean and reinstall them properly for optimal airflow.</p>
-      </div>
-      
-      <div class="service-card">
-        <div class="service-icon">☀️</div>
-        <h3>Solar Panel Cleaning</h3>
-        <p>Maximize your energy efficiency with professional solar panel cleaning. Safe methods that protect your investment.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Pricing Section -->
-<section id="pricing" class="pricing-section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Transparent Pricing</span>
-      <h2 class="section-title">Simple, Upfront Pricing</h2>
-      <p class="section-subtitle">No hidden fees, no surprises. Get quality service at fair prices from Nick's Surface Solutions.</p>
+<section class="pricing" id="pricing">
+  <div class="pricing-inner">
+    <div class="pricing-header">
+      <h2>Simple Pricing</h2>
     </div>
     
     <div class="pricing-grid">
       <div class="price-card">
-        <div class="price-label">Single Story Home</div>
-        <div class="price">$149<span>/starting</span></div>
-        <p class="price-desc">Perfect for ranch-style homes and bungalows</p>
+        <div class="price-tier">Single Story</div>
+        <div class="price">$149<span> starting</span></div>
+        <p class="price-desc">Ranch homes, bungalows, small properties</p>
         <ul class="price-features">
-          <li>Exterior window cleaning</li>
-          <li>Screen cleaning included</li>
-          <li>Track & sill cleaning</li>
+          <li>All exterior windows</li>
+          <li>Screen cleaning</li>
+          <li>Track & sill wipe</li>
           <li>Streak-free guarantee</li>
         </ul>
       </div>
       
       <div class="price-card featured">
-        <div class="price-label">Two Story Home</div>
-        <div class="price">$199<span>/starting</span></div>
-        <p class="price-desc">Most popular choice for family homes</p>
+        <div class="price-tier">Two Story</div>
+        <div class="price">$199<span> starting</span></div>
+        <p class="price-desc">Most homes. Most popular.</p>
         <ul class="price-features">
           <li>All exterior windows</li>
-          <li>Interior windows available</li>
-          <li>Screen & track cleaning</li>
-          <li>Hard water removal</li>
-          <li>Priority scheduling</li>
+          <li>Interior available add-on</li>
+          <li>Hard water spot removal</li>
+          <li>Screen restoration</li>
+          <li>Priority booking</li>
         </ul>
       </div>
       
       <div class="price-card">
-        <div class="price-label">Pressure Washing</div>
-        <div class="price">$0.25<span>/sq ft</span></div>
-        <p class="price-desc">Driveways, patios, siding & more</p>
+        <div class="price-tier">Pressure Washing</div>
+        <div class="price">$0.25<span> /sq ft</span></div>
+        <p class="price-desc">Driveways, patios, siding, concrete</p>
         <ul class="price-features">
-          <li>Surface-appropriate pressure</li>
-          <li>Pre-treatment of stains</li>
-          <li>Edge-to-edge cleaning</li>
-          <li>Bundle discounts available</li>
+          <li>Surface-safe pressure</li>
+          <li>Pre-treatment included</li>
+          <li>Edge-to-edge clean</li>
+          <li>Bundle & save</li>
         </ul>
       </div>
     </div>
-    
-    <p class="text-center mt-2" style="color: var(--gray-600);">Final pricing depends on home size and condition. <a href="#contact" style="color: var(--accent); font-weight: 600;">Contact Nick</a> for a custom quote!</p>
   </div>
 </section>
 
-<!-- Gallery Section - Clean Grid (No Hover Text) -->
-<section id="gallery" class="gallery">
-  <div class="container" style="margin-bottom: 2rem;">
-    <div class="section-header">
-      <span class="section-tag">Our Work</span>
-      <h2 class="section-title">See The Difference</h2>
-      <p class="section-subtitle">Real results from real customers across Orlando.</p>
-    </div>
+<section class="reviews" id="reviews">
+  <div class="reviews-header">
+    <h2>What People Say</h2>
   </div>
   
-  <div class="gallery-grid">
-    <div class="gallery-item">
-      <img src="work1.jpg" alt="Window cleaning work">
-    </div>
-    <div class="gallery-item">
-      <img src="work2.jpg" alt="Pressure washing work">
-    </div>
-    <div class="gallery-item">
-      <img src="work3.jpg" alt="Residential cleaning">
-    </div>
-    <div class="gallery-item">
-      <img src="work4.jpg" alt="Commercial property cleaning">
-    </div>
-    <div class="gallery-item">
-      <img src="work5.jpg" alt="Solar panel cleaning">
-    </div>
-    <div class="gallery-item">
-      <img src="work6.jpg" alt="Screen cleaning">
-    </div>
-    <div class="gallery-item">
-      <img src="work7.jpg" alt="Driveway cleaning">
-    </div>
-    <div class="gallery-item">
-      <img src="work8.jpg" alt="Patio restoration">
-    </div>
-  </div>
-</section>
-
-<!-- Reviews Section -->
-<section id="reviews" class="reviews">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Testimonials</span>
-      <h2 class="section-title">What Our Customers Say</h2>
-      <p class="section-subtitle">Don't just take our word for it—hear from homeowners across Orlando.</p>
+  <div class="review-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Nick showed up early, worked fast, and my windows have never looked better. Actually texted me before he arrived. Stand-up guy.</p>
+      <div class="review-author">
+        <img src="review1.jpg" alt="" class="review-avatar">
+        <div>
+          <div class="review-name">Meredith C.</div>
+          <div class="review-location">Winter Park</div>
+        </div>
+      </div>
     </div>
     
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">Nick did an amazing job on our windows! They literally sparkle now. He was professional, on time, and left no mess behind. Will definitely be using Nick's Surface Solutions again.</p>
-        <div class="review-author">
-          <img src="review1.jpg" alt="Meredith C." class="review-avatar">
-          <div class="review-info">
-            <h4>Meredith C.</h4>
-            <span>Winter Park, FL</span>
-          </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">I've hired 3 different window cleaners in Orlando. Nick's Surface Solutions is the only one I'll call back. Professional, fair price, perfect work.</p>
+      <div class="review-author">
+        <img src="review1.jpg" alt="" class="review-avatar">
+        <div>
+          <div class="review-name">Stephen B.</div>
+          <div class="review-location">Windermere</div>
         </div>
       </div>
-      
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">I've used several cleaners in Orlando, but Nick is by far the best. Detail-oriented, fair pricing, and my windows have never looked better. Highly recommend Nick's Surface Solutions!</p>
-        <div class="review-author">
-          <img src="review1.jpg" alt="Laura A." class="review-avatar">
-          <div class="review-info">
-            <h4>Laura A.</h4>
-            <span>Celebration, FL</span>
-          </div>
+    </div>
+    
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Pressure washed my driveway and patio. Looks brand new. He even cleaned up the sidewalk edges without me asking. Details matter.</p>
+      <div class="review-author">
+        <img src="review1.jpg" alt="" class="review-avatar">
+        <div>
+          <div class="review-name">Laura A.</div>
+          <div class="review-location">Celebration</div>
         </div>
       </div>
-      
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">Hired Nick for pressure washing our driveway and patio—incredible difference! He treated our property like his own. Great communication from start to finish.</p>
-        <div class="review-author">
-          <img src="review1.jpg" alt="Stephen B." class="review-avatar">
-          <div class="review-info">
-            <h4>Stephen B.</h4>
-            <span>Windermere, FL</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">Fantastic results on our two-story home. Nick was careful, thorough, and even cleaned our hard-to-reach skylights. Nick's Surface Solutions is worth every penny!</p>
-        <div class="review-author">
-          <img src="review1.jpg" alt="Bill N." class="review-avatar">
-          <div class="review-info">
-            <h4>Bill N.</h4>
-            <span>Lake Buena Vista, FL</span>
-          </div>
+    </div>
+    
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Two story home with hard water spots Nick got off in 20 minutes. Other companies said it was "permanent." Yeah right. Hire this guy.</p>
+      <div class="review-author">
+        <img src="review1.jpg" alt="" class="review-avatar">
+        <div>
+          <div class="review-name">Bill N.</div>
+          <div class="review-location">Lake Buena Vista</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Guarantee Section -->
 <section class="guarantee">
-  <div class="guarantee-content">
+  <div class="guarantee-inner">
     <img src="guarantee-badge.jpg" alt="100% Satisfaction Guarantee">
     <h2>100% Streak-Free Guarantee</h2>
-    <p>We don't leave until you love it. Your satisfaction is our top priority—if you're not happy, we'll make it right. That's the Nick's Surface Solutions promise.</p>
+    <p>Not happy? We come back and fix it. Free. No arguments, no hassle. That's how we work.</p>
   </div>
 </section>
 
-<!-- Map Section -->
-<section class="map-section">
-  <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224444.704971!2d-81.508833!3d28.4810979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e77eddb3e8d6f5%3A0x9c8e9e5e5e5e5e5e!2sOrlando%2C%20FL!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <div class="map-overlay"></div>
-  </div>
-  
-  <div class="service-areas">
-    <h3>Serving Greater Orlando</h3>
-    <div class="areas-list">
-      <span class="area-tag">Orlando</span>
-      <span class="area-tag">Celebration</span>
-      <span class="area-tag">Kissimmee</span>
-      <span class="area-tag">Davenport</span>
-      <span class="area-tag">Windermere</span>
-      <span class="area-tag">Winter Garden</span>
-      <span class="area-tag">Clermont</span>
-      <span class="area-tag">Ocoee</span>
-      <span class="area-tag">Lake Buena Vista</span>
-      <span class="area-tag">Winter Park</span>
-      <span class="area-tag">Altamonte Springs</span>
-      <span class="area-tag">Longwood</span>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="contact">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <span class="section-tag">Get Started</span>
-        <h3>Ready for Crystal Clear Results?</h3>
-        <p>Get your free, no-obligation quote today. Nick typically responds within 2 hours during business hours.</p>
-        
-        <div class="contact-methods">
-          <a href="tel:3172199751" class="contact-method">
-            <div class="contact-icon">📞</div>
-            <div>
-              <strong>Call Nick</strong>
-              <div style="color: inherit; opacity: 0.8; font-size: 0.9rem;">(317) 219-9751</div>
-            </div>
-          </a>
-          
-          <a href="sms:3172199751" class="contact-method">
-            <div class="contact-icon">💬</div>
-            <div>
-              <strong>Text Photos</strong>
-              <div style="color: inherit; opacity: 0.8; font-size: 0.9rem;">Send pics for quick quote</div>
-            </div>
-          </a>
-          
-          <div class="contact-method">
-            <div class="contact-icon">⏰</div>
-            <div>
-              <strong>Business Hours</strong>
-              <div style="color: inherit; opacity: 0.8; font-size: 0.9rem;">Mon-Sat: 8AM - 6PM</div>
-            </div>
-          </div>
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Get Your Free Quote</h2>
+      
+      <a href="tel:3172199751" class="contact-method">
+        <span class="contact-icon">📞</span>
+        <div class="contact-detail">
+          <h3>Call or Text</h3>
+          <p>(317) 219-9751</p>
+        </div>
+      </a>
+      
+      <a href="mailto:nick@nickssurfacesolutions.com" class="contact-method">
+        <span class="contact-icon">✉️</span>
+        <div class="contact-detail">
+          <h3>Email</h3>
+          <p>nick@nickssurfacesolutions.com</p>
+        </div>
+      </a>
+      
+      <div class="contact-method">
+        <span class="contact-icon">⏰</span>
+        <div class="contact-detail">
+          <h3>Hours</h3>
+          <p>Mon-Sat 8AM-6PM</p>
         </div>
       </div>
       
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks! Nick will contact you shortly.');">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" placeholder="John Smith" required>
+      <div class="contact-method">
+        <span class="contact-icon">📍</span>
+        <div class="contact-detail">
+          <h3>Service Area</h3>
+          <p>Orlando & All Surrounding Areas</p>
         </div>
-        
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" placeholder="(407) 555-0123" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="city">City</label>
-          <input type="text" id="city" placeholder="Orlando, FL" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="service">Service Needed</label>
-          <select id="service" required>
-            <option value="">Select a service...</option>
-            <option value="window">Window Cleaning</option>
-            <option value="pressure">Pressure Washing</option>
-            <option value="both">Windows + Pressure Washing</option>
-            <option value="solar">Solar Panel Cleaning</option>
-            <option value="other">Other / Not Sure</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label for="message">Tell Nick about your project</label>
-          <textarea id="message" placeholder="Number of windows, areas needing pressure washing, etc."></textarea>
-        </div>
-        
-        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Request Free Quote</button>
-      </form>
+      </div>
     </div>
+    
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks! Nick will hit you back within 2 hours.');">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" placeholder="Your name" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="tel" placeholder="(407) 555-0123" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Service Needed</label>
+        <select required>
+          <option value="">Select one...</option>
+          <option>Window Cleaning</option>
+          <option>Pressure Washing</option>
+          <option>Both</option>
+          <option>Solar Panels</option>
+          <option>Not Sure</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell me about your project..."></textarea>
+      </div>
+      
+      <button type="submit" class="btn-submit">Send Message</button>
+    </form>
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
-  <div class="footer-content">
-    <img src="logo.png" alt="Nick's Surface Solutions" class="footer-logo">
-    <div class="footer-links">
-      <a href="#promise">Our Promise</a>
-      <a href="#services">Services</a>
-      <a href="#pricing">Pricing</a>
-      <a href="tel:3172199751">(317) 219-9751</a>
-    </div>
-    <p class="copyright">© 2024 Nick's Surface Solutions. Licensed & Insured. Serving Orlando, FL.</p>
-  </div>
+  <img src="logo.png" alt="Nick's Surface Solutions" class="footer-logo">
+  <p class="footer-text">© 2024 Nick's Surface Solutions. Licensed & Insured. Orlando, FL.</p>
 </footer>
 
-<!-- Sticky CTA -->
-<div class="sticky-cta">
-  <a href="tel:3172199751" class="sticky-btn sticky-btn-call">📞 Call Now</a>
-  <a href="sms:3172199751" class="sticky-btn sticky-btn-text">💬 Text Nick</a>
+<div class="sticky-bottom">
+  <a href="tel:3172199751" class="sticky-btn">Call (317) 219-9751</a>
+  <a href="#contact" class="sticky-btn">Get Quote</a>
 </div>
 
 </body>
