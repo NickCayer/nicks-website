@@ -1,186 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nick's Surface Solutions | Orlando</title>
-  <style>
- body {
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nick's Surface Solutions | Orlando</title>
+
+<style>
+body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
-  color: #1a1a1a;
+  background: #f8fafc;
+  color: #0f172a;
 }
 
-  .container {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
+/* HERO */
 .hero {
+  padding: 120px 20px 80px;
   text-align: center;
-  padding: 100px 20px 60px;
-  background: radial-gradient(circle at top right, rgba(251,191,36,0.25), transparent 40%);
+  background:
+    radial-gradient(circle at 80% 10%, rgba(251,191,36,0.35), transparent 40%),
+    linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 70%);
+.hero img {
+  max-width: 220px;
+  margin-bottom: 20px;
 }
 
-.section {
-  background: #ffffff;
-  color: #1a1a1a;
-  border-radius: 16px;
-  padding: 40px;
-  margin-top: 40px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 10px;
 }
 
 .highlight {
   color: #fbbf24;
 }
 
-h1, h2 {
-  letter-spacing: -0.5px;
+p.sub {
+  color: #64748b;
+  margin-bottom: 25px;
 }
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-  }
 
-  .hero {
-    background: linear-gradient(135deg, #0f172a, #1e3a8a);
-    color: white;
-    padding: 60px 20px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  }
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 5px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
 
-  .hero img {
-    max-width: 320px;
-    margin-bottom: 20px;
-  }
+.btn-dark {
+  background: #0f172a;
+  color: white;
+}
 
-  .hero h1 {
-    font-size: 38px;
-    margin-bottom: 10px;
-  }
+.btn-gold {
+  background: #fbbf24;
+  color: black;
+}
 
-  .hero p {
-    font-size: 18px;
-    color: #d1d5db;
-    margin-bottom: 25px;
-  }
+/* SECTION */
+.section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
 
-  .btn {
-    display: inline-block;
-    padding: 14px 26px;
-    margin: 5px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.2s ease;
-  }
+.section h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
 
-  .btn-dark {
-    background: #111827;
-    color: white;
-  }
+/* SERVICES */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
 
-  .btn-dark:hover {
-    background: #000;
-  }
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
 
-  .btn-gold {
-    background: #fbbf24;
-    color: #000;
-  }
+.card h3 {
+  margin-bottom: 10px;
+}
 
-  .btn-gold:hover {
-    background: #f59e0b;
-  }
+/* PRICING */
+.pricing {
+  display: grid;
+  gap: 20px;
+}
 
-  .section {
-    margin-top: 40px;
-  }
+.price-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
 
-  .section h2 {
-    margin-bottom: 20px;
-  }
+/* CONTACT */
+form {
+  display: grid;
+  gap: 15px;
+}
 
-  .services {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
+input, textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+}
 
-  .service {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    font-weight: 500;
-  }
-
-  .trust {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #6b7280;
-  }
-
-  @media (max-width: 600px) {
-    .services {
-      grid-template-columns: 1fr;
-    }
-  }
+button {
+  background: #0f172a;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+}
 </style>
 </head>
 
 <body>
 
-  <div class="hero container">
-    <img src="nicks_logo.png" alt="Nick's Surface Solutions Logo" style="max-width: 380px; height: auto; margin-bottom: 20px;">
-    <h1>Clear Views. <span class="highlight">Professional Results.</span></h1>
-    <p>Reliable. Affordable. Professional exterior cleaning services.</p>
-    <a href="tel:3172199751" class="btn btn-dark">Call Now</a>
-<a href="sms:3172199751" class="btn btn-gold">Get a Free Quote</a>
-    <p class="trust">
-  ✔ Locally Owned • ✔ Free Quotes • ✔ Fast Response
-</p>
-  </div>
+<!-- HERO -->
+<div class="hero">
+  <img src="nicks_logo.png">
+  <h1>Clear Views. <span class="highlight">Professional Results.</span></h1>
+  <p class="sub">Reliable exterior cleaning in Orlando.</p>
+  <a href="tel:3172199751" class="btn btn-dark">Call Now</a>
+  <a href="#" class="btn btn-gold">Get a Free Quote</a>
+</div>
 
-  <div class="section container">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="service">Window Cleaning</div>
-<div class="service">Screen Cleaning</div>
-<div class="service">Pressure Washing</div>
-<div class="service">Solar Panel Cleaning</div>
+<!-- SERVICES -->
+<div class="section">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Window Cleaning</h3>
+      <p>Interior & exterior. Streak-free finish.</p>
+    </div>
+    <div class="card">
+      <h3>Pressure Washing</h3>
+      <p>Driveways, patios, siding.</p>
+    </div>
+    <div class="card">
+      <h3>Screen Cleaning</h3>
+      <p>Restore clarity and airflow.</p>
+    </div>
+    <div class="card">
+      <h3>Solar Panel Cleaning</h3>
+      <p>Maximize efficiency.</p>
     </div>
   </div>
+</div>
 
-  <div class="section container">
-    <h2>About Us</h2>
-    <p>Locally owned and operated in Central Florida, Nick’s Surface Solutions delivers top-quality cleaning with attention to detail and customer satisfaction every time.</p>
-  </div>
-
-  <div class="section container">
-    <div class="offer">
-      $30 OFF Your First Cleaning
+<!-- PRICING -->
+<div class="section">
+  <h2>Pricing</h2>
+  <div class="pricing">
+    <div class="price-card">
+      <strong>Window Cleaning</strong><br>
+      From $129
+    </div>
+    <div class="price-card">
+      <strong>Pressure Washing</strong><br>
+      From $149
     </div>
   </div>
+</div>
 
-  <div class="section container">
-    <h2>Contact</h2>
-    <p>Call or text us today to get your free quote.</p>
-    <a href="tel:3172199751" class="btn">Call Now</a>
-  </div>
+<!-- CONTACT -->
+<div class="section">
+  <h2>Get a Quote</h2>
+  <form>
+    <input placeholder="Your Name">
+    <input placeholder="Phone Number">
+    <textarea placeholder="What do you need cleaned?"></textarea>
+    <button>Submit</button>
+  </form>
+</div>
 
 </body>
 </html>
