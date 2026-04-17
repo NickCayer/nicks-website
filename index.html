@@ -3,164 +3,205 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nick’s Window Services</title>
+<title>Nick’s Window Services | Orlando</title>
 
 <style>
+
 body {
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,sans-serif;
-  background:#f5f5f5;
-  color:#111;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f8f8f8;
+  color: #111;
 }
 
 /* HERO */
 .hero {
-  text-align:center;
-  padding:90px 20px 60px;
-  animation:fadeIn 1s ease;
+  text-align: center;
+  padding: 100px 20px 60px;
+  animation: fadeIn 1s ease;
 }
 
-.hero img {
-  width:320px;
-  margin-bottom:20px;
+.logo {
+  width: 220px;
+  margin-bottom: 20px;
+  animation: float 4s ease-in-out infinite;
 }
 
-h1 {
-  font-size:40px;
-  margin:10px 0;
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-p {
-  color:#555;
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
 }
 
-/* BUTTONS */
+.hero p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
 .btn {
-  display:inline-block;
-  margin:10px;
-  padding:14px 28px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:600;
-  transition:.3s;
+  padding: 14px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 .btn-dark {
-  background:#111;
-  color:white;
-}
-
-.btn-dark:hover {
-  transform:scale(1.05);
+  background: #111;
+  color: white;
 }
 
 .btn-gold {
-  background:linear-gradient(135deg,#d4af37,#f5d76e);
-  color:black;
+  background: #f4c542;
+  color: black;
 }
 
-.btn-gold:hover {
-  transform:scale(1.05);
-}
-
-/* SECTION */
-.section {
-  padding:70px 20px;
-  text-align:center;
-}
-
-/* CAROUSEL */
-.slider {
-  overflow:hidden;
-  max-width:1100px;
-  margin:auto;
-}
-
-.slide-track {
-  display:flex;
-  gap:20px;
-  animation:scroll 30s linear infinite;
-}
-
-/* THIS IS THE IMPORTANT PART */
-.slide {
-  width:260px;
-  height:320px;
-  overflow:hidden;
-  border-radius:16px;
-  flex-shrink:0;
-}
-
-.slide img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:0.4s;
-}
-
-.slide img:hover {
-  transform:scale(1.05);
+.btn:hover {
+  transform: translateY(-3px);
 }
 
 /* PRICING */
 .pricing {
-  max-width:800px;
-  margin:auto;
-  text-align:left;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.pricing h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.price-boxes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .price-box {
-  background:white;
-  padding:20px;
-  border-radius:12px;
-  margin:15px 0;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 250px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.price-box:hover {
+  transform: translateY(-5px);
+}
+
+.price-box h3 {
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.note {
+  margin-top: 20px;
+  color: #666;
+  font-size: 14px;
+}
+
+/* WORK SLIDER */
+.slider {
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+.slide-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll 25s linear infinite;
+}
+
+.slide-track img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* REVIEWS */
-.review {
-  max-width:600px;
-  margin:20px auto;
-  background:white;
-  padding:25px;
-  border-radius:12px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+.reviews {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.review-box {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  animation: fadeIn 1s ease;
+}
+
+.stars {
+  color: gold;
+  margin-bottom: 10px;
+}
+
+.name {
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 /* MAP */
+.map {
+  padding: 60px 20px;
+  text-align: center;
+}
+
 iframe {
-  width:100%;
-  height:260px;
-  border:0;
-  border-radius:12px;
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  border: none;
 }
 
-/* STICKY */
-.sticky {
-  position:fixed;
-  bottom:0;
-  width:100%;
-  background:#111;
-  text-align:center;
-  padding:15px;
+/* MOBILE CALL BAR */
+.callbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 15px;
 }
 
-.sticky a {
-  color:white;
-  font-weight:bold;
-  text-decoration:none;
+.callbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* ANIMATIONS */
-@keyframes scroll {
-  0% {transform:translateX(0);}
-  100% {transform:translateX(-50%);}
-}
-
+/* ANIMATION */
 @keyframes fadeIn {
-  from {opacity:0; transform:translateY(20px);}
-  to {opacity:1; transform:translateY(0);}
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
 }
+
 </style>
 </head>
 
@@ -168,98 +209,108 @@ iframe {
 
 <!-- HERO -->
 <div class="hero">
-  <img src="logo.png">
+  <img src="logo.png" class="logo">
   <h1>Crystal Clear Windows</h1>
   <p>Premium Window & Exterior Cleaning in Orlando</p>
 
-  <a href="tel:3172199751" class="btn btn-dark">Call Now</a>
-  <a href="sms:3172199751" class="btn btn-gold">Get Free Quote</a>
-</div>
-
-<!-- CAROUSEL -->
-<div class="section">
-  <h2>Our Work</h2>
-
-  <div class="slider">
-    <div class="slide-track">
-
-      <div class="slide"><img src="work1.jpg"></div>
-      <div class="slide"><img src="work2.jpg"></div>
-      <div class="slide"><img src="work3.jpg"></div>
-      <div class="slide"><img src="work4.jpg"></div>
-      <div class="slide"><img src="work5.jpg"></div>
-      <div class="slide"><img src="work6.jpg"></div>
-      <div class="slide"><img src="work7.jpg"></div>
-      <div class="slide"><img src="work8.jpg"></div>
-
-      <!-- duplicate for smooth loop -->
-      <div class="slide"><img src="work1.jpg"></div>
-      <div class="slide"><img src="work2.jpg"></div>
-      <div class="slide"><img src="work3.jpg"></div>
-      <div class="slide"><img src="work4.jpg"></div>
-      <div class="slide"><img src="work5.jpg"></div>
-      <div class="slide"><img src="work6.jpg"></div>
-      <div class="slide"><img src="work7.jpg"></div>
-      <div class="slide"><img src="work8.jpg"></div>
-
-    </div>
+  <div class="buttons">
+    <a href="tel:3172199751" class="btn btn-dark">Call Now</a>
+    <a href="sms:3172199751" class="btn btn-gold">Get Free Quote</a>
   </div>
 </div>
 
 <!-- PRICING -->
-<div class="section">
-  <h2>Pricing</h2>
+<div class="pricing">
+  <h2>Simple, Transparent Pricing</h2>
 
-  <div class="pricing">
-
+  <div class="price-boxes">
     <div class="price-box">
-      <strong>Window Cleaning</strong><br><br>
-      $5–$8 per window (exterior)<br>
-      Interior +$2 per window<br>
-      Screens +$2 each<br>
-      Tracks +$3 each
+      <h3>1 Story Homes</h3>
+      <p class="price">Starting at $149</p>
     </div>
 
     <div class="price-box">
-      <strong>Pressure Washing</strong><br><br>
-      Driveways: $75–$150<br>
-      Patios: $50–$120<br>
-      Full Exterior: Custom Quote
+      <h3>2 Story Homes</h3>
+      <p class="price">Starting at $199</p>
     </div>
 
     <div class="price-box">
-      Every job is custom priced based on size & condition
+      <h3>Interior Add-On</h3>
+      <p class="price">$3–$5 per window</p>
     </div>
+  </div>
 
+  <p class="note">
+    Final pricing depends on window count, size, and accessibility.
+  </p>
+</div>
+
+<!-- WORK -->
+<div class="slider">
+  <div class="slide-track">
+    <img src="work1.jpg">
+    <img src="work2.jpg">
+    <img src="work3.jpg">
+    <img src="work4.jpg">
+    <img src="work5.jpg">
+    <img src="work6.jpg">
+    <img src="work7.jpg">
+    <img src="work8.jpg">
+
+    <!-- duplicate for smooth loop -->
+    <img src="work1.jpg">
+    <img src="work2.jpg">
+    <img src="work3.jpg">
+    <img src="work4.jpg">
   </div>
 </div>
 
 <!-- REVIEWS -->
-<div class="section">
+<div class="reviews">
   <h2>What Customers Say</h2>
 
-  <div class="review">★★★★★<br>“Excellent service and great prices.”<br><strong>- Meredith C.</strong></div>
-  <div class="review">★★★★★<br>“Detail-oriented and professional.”<br><strong>- Laura A.</strong></div>
-  <div class="review">★★★★★<br>“Amazing job, highly recommend.”<br><strong>- Stephen B.</strong></div>
-  <div class="review">★★★★★<br>“Fantastic job, windows look great.”<br><strong>- Bill N.</strong></div>
-  <div class="review">★★★★★<br>“Everything cleaned perfectly.”<br><strong>- Crystal V.</strong></div>
-  <div class="review">★★★★★<br>“Hardworking and thorough.”<br><strong>- Rose G.</strong></div>
-
+  <div class="review-box" id="reviewBox">
+    <div class="stars">★★★★★</div>
+    <p id="reviewText"></p>
+    <div class="name" id="reviewName"></div>
+  </div>
 </div>
 
 <!-- MAP -->
-<div class="section">
+<div class="map">
   <h2>Serving Greater Orlando</h2>
-
-  <iframe src="https://maps.google.com/maps?q=Celebration%20Florida&t=&z=10&output=embed"></iframe>
-
-  <p>Orlando • Celebration • Kissimmee • Davenport • Windermere • Winter Garden • Clermont</p>
+  <iframe src="https://maps.google.com/maps?q=orlando&t=&z=10&ie=UTF8&iwloc=&output=embed"></iframe>
 </div>
 
-<!-- STICKY -->
-<div class="sticky">
-  <a href="tel:3172199751">📞 Call Now</a>
+<!-- CALL BAR -->
+<div class="callbar">
+  <a href="tel:3172199751">Call Now</a>
 </div>
+
+<script>
+
+/* REVIEW SLIDER */
+const reviews = [
+  ["Definitely recommend. Excellent service and great prices. My windows are cleaner than when they were brand new.", "Meredith C."],
+  ["So glad I gave him the job. My windows look incredible. Detail-oriented and professional.", "Laura A."],
+  ["Nick did an amazing job. I’ve already recommended him to neighbors.", "Stephen B."],
+  ["Fantastic job. Highly recommend this service.", "Bill N."],
+  ["Extremely happy. Cleaned glass, sills, and screens perfectly.", "Crystal V."],
+  ["Very hardworking and thorough. Results were amazing.", "Rose G."]
+];
+
+let i = 0;
+
+function rotateReviews() {
+  document.getElementById("reviewText").innerText = reviews[i][0];
+  document.getElementById("reviewName").innerText = "- " + reviews[i][1];
+  i = (i + 1) % reviews.length;
+}
+
+rotateReviews();
+setInterval(rotateReviews, 4000);
+
+</script>
 
 </body>
 </html>
