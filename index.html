@@ -10,58 +10,67 @@
 body {
   margin: 0;
   font-family: -apple-system, sans-serif;
-  background: #f8f8f8;
+  background: linear-gradient(180deg, #ffffff, #f3f4f6);
   color: #111;
 }
 
 /* HERO */
 .hero {
   text-align: center;
-  padding: 100px 20px 60px;
+  padding: 120px 20px 80px;
+  background: radial-gradient(circle at top, #ffffff, #f1f1f1);
 }
 
 .logo {
-  width: 320px;
-  margin-bottom: 20px;
-  animation: float 4s ease-in-out infinite;
+  width: 380px;
+  margin-bottom: 25px;
+  animation: float 5s ease-in-out infinite;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
 }
 
 @keyframes float {
   0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-12px); }
 }
 
 .hero h1 {
-  font-size: 44px;
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: -1px;
 }
 
 .hero p {
   color: #666;
-  margin-bottom: 30px;
+  font-size: 18px;
+  margin-bottom: 35px;
 }
 
+/* BUTTONS */
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .btn {
-  padding: 16px 30px;
-  border-radius: 12px;
-  text-decoration: none;
+  padding: 16px 34px;
+  border-radius: 14px;
   font-weight: 600;
+  text-decoration: none;
   transition: 0.3s;
 }
 
 .btn-dark {
-  background: #111;
+  background: linear-gradient(135deg, #111, #333);
   color: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .btn-outline {
   border: 2px solid #111;
   color: #111;
+  background: white;
 }
 
 .btn:hover {
@@ -71,65 +80,79 @@ body {
 /* SERVICES */
 .services {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 .service-list {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
   flex-wrap: wrap;
 }
 
 .service {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  width: 200px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 14px;
+  width: 220px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.service:hover {
+  transform: translateY(-8px);
 }
 
 /* PRICING */
 .pricing {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 .price-boxes {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
   flex-wrap: wrap;
 }
 
 .price-box {
   background: white;
-  padding: 25px;
-  border-radius: 12px;
+  padding: 30px;
+  border-radius: 16px;
   width: 260px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.price-box:hover {
+  transform: translateY(-8px) scale(1.03);
 }
 
 .note {
   color: #666;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 /* SLIDER */
 .slider {
   overflow: hidden;
-  padding: 60px 0;
+  padding: 80px 0;
 }
 
 .slide-track {
   display: flex;
-  gap: 20px;
-  animation: scroll 25s linear infinite;
+  gap: 25px;
+  animation: scroll 30s linear infinite;
 }
 
 .slide-track img {
-  width: 250px;
-  height: 250px;
+  width: 260px;
+  height: 260px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 @keyframes scroll {
@@ -140,30 +163,33 @@ body {
 /* REVIEWS */
 .reviews {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 .review-box {
   max-width: 600px;
   margin: auto;
   background: white;
-  padding: 30px;
-  border-radius: 12px;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  font-size: 17px;
 }
 
 /* MAP */
 .map {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 iframe {
   width: 100%;
-  height: 300px;
-  border-radius: 12px;
+  height: 320px;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* CITIES */
 .cities {
   margin-top: 15px;
   color: #666;
@@ -172,16 +198,26 @@ iframe {
 /* CONTACT */
 .contact {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 input, textarea {
   width: 90%;
-  max-width: 400px;
-  margin: 10px;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  max-width: 420px;
+  margin: 12px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+button {
+  padding: 14px 30px;
+  border-radius: 12px;
+  border: none;
+  background: #111;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 /* CALL BAR */
@@ -200,7 +236,6 @@ input, textarea {
 
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <img src="logo.png" class="logo">
   <h1>Crystal Clear Windows</h1>
@@ -212,7 +247,6 @@ input, textarea {
   </div>
 </div>
 
-<!-- SERVICES -->
 <div class="services">
   <h2>Our Services</h2>
   <div class="service-list">
@@ -223,65 +257,45 @@ input, textarea {
   </div>
 </div>
 
-<!-- PRICING -->
 <div class="pricing">
   <h2>Simple Pricing</h2>
-
   <div class="price-boxes">
-    <div class="price-box">
-      1 Story Homes<br><strong>Starting at $149</strong>
-    </div>
-
-    <div class="price-box">
-      2 Story Homes<br><strong>Starting at $199</strong>
-    </div>
-
-    <div class="price-box">
-      Interior Add-On<br><strong>$3–$5 per window</strong>
-    </div>
-
-    <div class="price-box">
-      Pressure Washing<br><strong>Starting at $99+</strong>
-    </div>
+    <div class="price-box">1 Story Homes<br><strong>$149+</strong></div>
+    <div class="price-box">2 Story Homes<br><strong>$199+</strong></div>
+    <div class="price-box">Interior Add-On<br><strong>$3–$5/window</strong></div>
+    <div class="price-box">Pressure Washing<br><strong>$99+</strong></div>
   </div>
-
-  <p class="note">Final pricing depends on size, condition, and access.</p>
+  <p class="note">Pricing varies based on size, condition, and access.</p>
 </div>
 
-<!-- WORK SLIDER -->
 <div class="slider">
   <div class="slide-track">
     <img src="work1.jpg"><img src="work2.jpg"><img src="work3.jpg">
     <img src="work4.jpg"><img src="work5.jpg"><img src="work6.jpg">
     <img src="work7.jpg"><img src="work8.jpg">
-
-    <img src="work1.jpg"><img src="work2.jpg"><img src="work3.jpg">
+    <img src="work1.jpg"><img src="work2.jpg">
   </div>
 </div>
 
-<!-- REVIEWS -->
 <div class="reviews">
   <h2>What Customers Say</h2>
   <div class="review-box" id="reviewBox"></div>
 </div>
 
-<!-- MAP -->
 <div class="map">
   <h2>Serving Greater Orlando</h2>
   <iframe src="https://maps.google.com/maps?q=orlando&t=&z=10&output=embed"></iframe>
-
   <div class="cities">
     Orlando • Celebration • Kissimmee • Davenport • Windermere • Winter Garden • Clermont • Ocoee • Dr Phillips • Lake Buena Vista
   </div>
 </div>
 
-<!-- CONTACT -->
 <div class="contact">
   <h2>Get a Free Quote</h2>
   <input placeholder="Name"><br>
   <input placeholder="Phone"><br>
   <textarea placeholder="What do you need cleaned?"></textarea><br>
-  <button class="btn btn-dark">Submit</button>
+  <button>Submit</button>
 </div>
 
 <div class="callbar">
@@ -290,12 +304,12 @@ input, textarea {
 
 <script>
 const reviews = [
-"Definitely recommend. Excellent service and great prices. My windows are cleaner than brand new. – Meredith C.",
-"My windows look incredible. Detail-oriented and professional. – Laura A.",
-"Amazing job. I’ve recommended him to neighbors. – Stephen B.",
-"Fantastic job. Highly recommend. – Bill N.",
-"Extremely happy. Everything cleaned perfectly. – Crystal V.",
-"Very hardworking and thorough. – Rose G."
+"Excellent service. My windows are cleaner than brand new. – Meredith C.",
+"Detail-oriented and professional. – Laura A.",
+"Amazing job. – Stephen B.",
+"Highly recommend. – Bill N.",
+"Everything cleaned perfectly. – Crystal V.",
+"Hardworking and thorough. – Rose G."
 ];
 
 let i = 0;
