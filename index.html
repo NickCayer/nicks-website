@@ -6,6 +6,57 @@
 <title>Nick's Surface Solutions | Orlando Window Cleaning & Pressure Washing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Schema Markup for Local Business -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Nick's Surface Solutions",
+  "image": "logo.png",
+  "telephone": "+1-317-219-9751",
+  "email": "nick@nickssurfacesolutions.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Orlando",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.5384,
+    "longitude": -81.3789
+  },
+  "url": "https://nickssurfacesolutions.com",
+  "priceRange": "$$",
+  "areaServed": [
+    "Orlando, FL",
+    "Winter Park, FL",
+    "Celebration, FL",
+    "Kissimmee, FL",
+    "Windermere, FL",
+    "Winter Garden, FL",
+    "Clermont, FL",
+    "Ocoee, FL",
+    "Lake Buena Vista, FL",
+    "Davenport, FL",
+    "Altamonte Springs, FL",
+    "Longwood, FL",
+    "Apopka, FL",
+    "Sanford, FL",
+    "Oviedo, FL"
+  ],
+  "serviceType": [
+    "Window Cleaning",
+    "Pressure Washing",
+    "Screen Cleaning",
+    "Solar Panel Cleaning"
+  ],
+  "openingHours": "Mo-Sa 08:00-18:00",
+  "paymentAccepted": "Cash, Credit Card, Check"
+}
+</script>
+
 <style>
 * {
   margin: 0;
@@ -20,6 +71,7 @@
   --accent-dark: #0284c7;
   --gray: #6b7280;
   --light-gray: #f3f4f6;
+  --urgent: #dc2626;
 }
 
 body {
@@ -38,7 +90,23 @@ h1, h2, h3, .display {
   line-height: 1.1;
 }
 
-/* Navigation - Hidden initially */
+/* Urgency Banner */
+.urgency-banner {
+  background: var(--urgent);
+  color: var(--white);
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  z-index: 1001;
+}
+
+.urgency-banner strong {
+  font-weight: 700;
+}
+
+/* Navigation */
 nav {
   position: fixed;
   top: 0;
@@ -102,7 +170,7 @@ nav.visible {
   background: var(--accent);
 }
 
-/* Hero with full-width logo */
+/* Hero */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -425,9 +493,84 @@ nav.visible {
   transform: scale(1.2) rotate(10deg);
 }
 
+/* Process Timeline */
+.process {
+  background: var(--light-gray);
+  padding: 5rem 2rem;
+}
+
+.process-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.process-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.process-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.process-header p {
+  color: var(--gray);
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  left: 12.5%;
+  right: 12.5%;
+  height: 2px;
+  background: var(--accent);
+  z-index: 0;
+}
+
+.step {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.step-number {
+  width: 4rem;
+  height: 4rem;
+  background: var(--accent);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 1rem;
+  border: 4px solid var(--light-gray);
+}
+
+.step h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
 /* Pricing */
 .pricing {
-  background: var(--light-gray);
+  background: var(--white);
   padding: 5rem 2rem;
 }
 
@@ -457,7 +600,7 @@ nav.visible {
 }
 
 .price-card {
-  background: var(--white);
+  background: var(--light-gray);
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
@@ -481,6 +624,7 @@ nav.visible {
 
 .price-card.featured {
   border-color: var(--accent);
+  background: var(--white);
   position: relative;
 }
 
@@ -528,7 +672,7 @@ nav.visible {
   font-size: 0.9rem;
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--light-gray);
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .price-features {
@@ -631,6 +775,78 @@ nav.visible {
   font-size: 0.95rem;
 }
 
+/* FAQ */
+.faq {
+  background: var(--light-gray);
+  padding: 5rem 2rem;
+}
+
+.faq-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.faq-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.faq-header p {
+  color: var(--gray);
+}
+
+.faq-item {
+  background: var(--white);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.faq-question {
+  padding: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.2s;
+}
+
+.faq-question:hover {
+  background: var(--light-gray);
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+  color: var(--accent);
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  padding: 0 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  color: var(--gray);
+}
+
+.faq-item.active .faq-answer {
+  padding: 0 1.5rem 1.5rem;
+  max-height: 200px;
+}
+
 /* Guarantee */
 .guarantee {
   background: var(--accent);
@@ -658,7 +874,7 @@ nav.visible {
 /* Map */
 .map-section {
   padding: 0;
-  background: var(--light-gray);
+  background: var(--white);
 }
 
 .map-container {
@@ -696,7 +912,7 @@ nav.visible {
 }
 
 .area-tag {
-  background: var(--white);
+  background: var(--light-gray);
   padding: 0.5rem 1rem;
   border-radius: 50px;
   font-size: 0.9rem;
@@ -818,6 +1034,34 @@ nav.visible {
   resize: vertical;
 }
 
+.file-upload {
+  border: 2px dashed #e5e7eb;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.file-upload:hover {
+  border-color: var(--accent);
+  background: rgba(14, 165, 233, 0.05);
+}
+
+.file-upload input {
+  display: none;
+}
+
+.file-upload-text {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.file-upload-text span {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .btn-submit {
   width: 100%;
   padding: 1rem;
@@ -854,6 +1098,33 @@ footer {
   margin-bottom: 2rem;
   display: inline-block;
   animation: fadeInUp 1s ease;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.social-link {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social-link:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.social-link span {
+  font-size: 0.9rem;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .footer-text {
@@ -912,8 +1183,13 @@ footer {
 /* Responsive */
 @media (max-width: 1024px) {
   .promise-grid,
-  .pricing-grid {
+  .pricing-grid,
+  .process-steps {
     grid-template-columns: 1fr;
+  }
+  
+  .process-steps::before {
+    display: none;
   }
   
   .gallery-grid {
@@ -928,6 +1204,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .urgency-banner {
+    font-size: 0.8rem;
+  }
+  
   .nav-contact {
     display: none;
   }
@@ -955,10 +1235,19 @@ footer {
   .contact-form {
     padding: 1.5rem;
   }
+  
+  .faq-question {
+    font-size: 1rem;
+  }
 }
 </style>
 </head>
 <body>
+
+<!-- Urgency Banner -->
+<div class="urgency-banner">
+  🌟 <strong>Spring Special:</strong> Book this week and get 10% off your first service! <strong>Limited spots available.</strong>
+</div>
 
 <nav id="navbar">
   <div class="nav-inner">
@@ -1057,6 +1346,42 @@ footer {
       <span class="service-icon">☀️</span>
       <h3>Solar Panels</h3>
       <p>Safe, effective cleaning to maximize your system's energy production.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Process Timeline -->
+<section class="process">
+  <div class="process-inner">
+    <div class="process-header">
+      <h2>How It Works</h2>
+      <p>Getting started is easy. Here's what to expect:</p>
+    </div>
+    
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Get a Quote</h3>
+        <p>Call, text, or fill out our form. We'll give you a fast, free estimate.</p>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Schedule</h3>
+        <p>Pick a time that works for you. We offer flexible scheduling.</p>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>We Clean</h3>
+        <p>Our team arrives on time and gets the job done right.</p>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Inspect</h3>
+        <p>We walk through the work with you to make sure you love it.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1171,6 +1496,66 @@ footer {
   </div>
 </section>
 
+<!-- FAQ Section -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <h2>Frequently Asked Questions</h2>
+      <p>Got questions? We've got answers.</p>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Do I need to be home during the service?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        No, you don't need to be home for exterior work. For interior window cleaning, we'll need access inside. Many customers provide a garage code or leave a key for us.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        How long does a typical job take?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Most residential window cleaning jobs take 2-4 hours depending on home size. Pressure washing varies by surface area but typically 1-3 hours.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Will pressure washing damage my siding or paint?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        No. We use surface-appropriate pressure levels and techniques. For delicate surfaces, we use soft washing methods that clean effectively without causing damage.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        How often should I have my windows cleaned?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        We recommend every 3-6 months for exterior windows and annually for interior cleaning. Homes near busy roads or construction may need more frequent service.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        What forms of payment do you accept?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        We accept cash, check, and all major credit cards. Payment is due upon completion of service.
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="guarantee">
   <div class="guarantee-inner">
     <h2>100% Streak-Free Guarantee</h2>
@@ -1268,6 +1653,16 @@ footer {
       </div>
       
       <div class="form-group">
+        <label>Upload Photos (Optional)</label>
+        <label class="file-upload">
+          <input type="file" accept="image/*" multiple>
+          <div class="file-upload-text">
+            📷 <span>Click to upload</span> photos of your project
+          </div>
+        </label>
+      </div>
+      
+      <div class="form-group">
         <label>Message (Optional)</label>
         <textarea placeholder="Tell us about your project..."></textarea>
       </div>
@@ -1279,6 +1674,13 @@ footer {
 
 <footer>
   <img src="logo.png" alt="Nick's Surface Solutions" class="footer-logo">
+  
+  <div class="social-links">
+    <a href="https://instagram.com/nickssurfacesolutions" target="_blank" class="social-link">
+      📸 <span>@nickssurfacesolutions</span>
+    </a>
+  </div>
+  
   <p class="footer-text">© 2024 Nick's Surface Solutions. Licensed & Insured. Serving Orlando, FL.</p>
 </footer>
 
@@ -1297,6 +1699,12 @@ window.addEventListener('scroll', function() {
     navbar.classList.remove('visible');
   }
 });
+
+// FAQ toggle
+function toggleFaq(element) {
+  const item = element.parentElement;
+  item.classList.toggle('active');
+}
 </script>
 
 </body>
