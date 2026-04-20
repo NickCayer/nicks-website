@@ -179,6 +179,18 @@ nav.visible {
   padding: 2rem 2rem 4rem;
   background: var(--white);
   position: relative;
+  overflow: hidden;
+}
+
+.hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.4;
+  pointer-events: none;
 }
 
 .hero-logo-full {
@@ -187,6 +199,8 @@ nav.visible {
   margin: 0 auto 3rem;
   display: block;
   animation: fadeInDown 1s ease;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes fadeInDown {
@@ -205,6 +219,8 @@ nav.visible {
   margin: 0 auto;
   width: 100%;
   animation: fadeInUp 1s ease 0.3s both;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes fadeInUp {
@@ -1300,6 +1316,7 @@ footer {
 </nav>
 
 <section class="hero">
+  <canvas class="hero-canvas" id="rippleCanvas"></canvas>
   <img src="logo.png" alt="Nick's Surface Solutions" class="hero-logo-full">
   <div class="hero-inner">
     <span class="hero-badge">★ 5-Star Rated in Orlando</span>
@@ -1724,8 +1741,8 @@ footer {
 <footer>
   <img src="logo.png" alt="Nick's Surface Solutions" class="footer-logo">
   
-  <a href="https://instagram.com/nickssurfacesolutions" target="_blank" class="instagram-footer">
-    @nickssurfacesolutions
+  <a href="https://instagram.com/nicksurfacesolutions" target="_blank" class="instagram-footer">
+    @nicksurfacesolutions
   </a>
   
   <p class="footer-text">© 2024 Nick's Surface Solutions. Licensed & Insured. Serving Orlando, FL.</p>
@@ -1776,6 +1793,73 @@ const galleryObserver = new IntersectionObserver((entries) => {
 galleryItems.forEach(item => {
   galleryObserver.observe(item);
 });
+
+// Water Ripple Canvas Animation
+(function() {
+  const canvas = document.getElementById('rippleCanvas');
+  if (!canvas) return;
+  
+  const ctx = canvas.getContext('2d');
+  let width, height;
+  let ripples = [];
+  let lastRipple = 0;
+  
+  function resize() {
+    width = canvas.width = canvas.offsetWidth;
+    height = canvas.height = canvas.offsetHeight;
+  }
+  
+  resize();
+  window.addEventListener('resize', resize);
+  
+  class Ripple {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      this.radius = 0;
+      this.maxRadius = Math.random() * 100 + 80;
+      this.speed = Math.random() * 0.8 + 0.4;
+      this.opacity = 0.15;
+      this.lineWidth = Math.random() * 1.5 + 0.5;
+    }
+    
+    update() {
+      this.radius += this.speed;
+      this.opacity -= 0.0015;
+      return this.opacity > 0 && this.radius < this.maxRadius;
+    }
+    
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(14, 165, 233, ${this.opacity})`;
+      ctx.lineWidth = this.lineWidth;
+      ctx.stroke();
+    }
+  }
+  
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    
+    const now = Date.now();
+    if (now - lastRipple > 800) {
+      ripples.push(new Ripple(
+        Math.random() * width,
+        Math.random() * height
+      ));
+      lastRipple = now;
+    }
+    
+    ripples = ripples.filter(ripple => {
+      ripple.draw();
+      return ripple.update();
+    });
+    
+    requestAnimationFrame(animate);
+  }
+  
+  animate();
+})();
 </script>
 
 </body>
