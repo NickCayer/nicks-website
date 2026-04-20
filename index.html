@@ -53,7 +53,7 @@
     "Solar Panel Cleaning"
   ],
   "openingHours": "Mo-Sa 08:00-18:00",
-  "paymentAccepted": "Cash, Credit Card, Check"
+  "paymentAccepted": "Cash, Check, E-Transfer"
 }
 </script>
 
@@ -694,12 +694,11 @@ nav.visible {
   font-weight: 700;
 }
 
-/* Reviews - Smooth Carousel */
+/* Reviews - Fixed Layout */
 .reviews {
   padding: 5rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 .reviews-header h2 {
@@ -707,15 +706,11 @@ nav.visible {
   margin-bottom: 2rem;
 }
 
-.reviews-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-.reviews-track {
-  display: flex;
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  transition: transform 0.6s ease;
+  margin-bottom: 2rem;
 }
 
 .review-card {
@@ -723,8 +718,6 @@ nav.visible {
   border: 1px solid #e5e7eb;
   padding: 2rem;
   border-radius: 12px;
-  min-width: calc(50% - 0.75rem);
-  flex-shrink: 0;
   transition: all 0.3s ease;
 }
 
@@ -772,36 +765,6 @@ nav.visible {
 .review-name {
   font-weight: 600;
   font-size: 0.95rem;
-}
-
-.review-nav {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.review-nav-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 2px solid var(--black);
-  background: var(--white);
-  color: var(--black);
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.review-nav-btn:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--white);
 }
 
 /* FAQ */
@@ -1140,8 +1103,8 @@ footer {
 .footer-logo {
   width: 100%;
   max-width: 400px;
-  margin-bottom: 2rem;
-  display: inline-block;
+  margin: 0 auto 1.5rem;
+  display: block;
   animation: fadeInUp 1s ease;
 }
 
@@ -1239,10 +1202,6 @@ footer {
   .contact-grid {
     grid-template-columns: 1fr;
   }
-  
-  .review-card {
-    min-width: 100%;
-  }
 }
 
 @media (max-width: 768px) {
@@ -1268,6 +1227,10 @@ footer {
   
   .price-card.featured {
     order: -1;
+  }
+  
+  .reviews-grid {
+    grid-template-columns: 1fr;
   }
   
   .contact-form {
@@ -1332,8 +1295,8 @@ footer {
       
       <div class="promise-item">
         <div class="promise-num">03</div>
-        <h3>Clean Finish</h3>
-        <p>We leave your property cleaner than we found it, guaranteed.</p>
+        <h3>Your Property Protected</h3>
+        <p>We treat your home like our own—careful, respectful, and always mindful of your landscaping and surfaces.</p>
       </div>
     </div>
   </div>
@@ -1483,67 +1446,60 @@ footer {
     <h2>Customer Reviews</h2>
   </div>
   
-  <div class="reviews-wrapper">
-    <div class="reviews-track" id="reviewsTrack">
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">Nick did a fantastic job. My windows look great. I highly recommend this service to anyone who needs there outside windows cleaned. You will not be disappointed.</p>
-        <div class="review-author">
-          <div class="review-avatar" style="background: #0ea5e9;">B</div>
-          <div class="review-name">— Bill Naz</div>
-        </div>
-      </div>
-      
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">I was extremely happy with the work performed by Nick. He explained the process he was using. The how and why it left your windows process. Cleaned the sills and the screens.</p>
-        <div class="review-author">
-          <div class="review-avatar" style="background: #8b5cf6;">C</div>
-          <div class="review-name">— Crystal Vincent</div>
-        </div>
-      </div>
-      
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">Nick was great! We have old windows and they really needed some TLC. He worked very hard and I'm very pleased with the end results! We will be using him again!</p>
-        <div class="review-author">
-          <div class="review-avatar" style="background: #f59e0b;">R</div>
-          <div class="review-name">— Rose Gregory</div>
-        </div>
-      </div>
-      
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">Definitely recommend. Excellent service. Great prices. My windows are cleaner now than when they were brand new</p>
-        <div class="review-author">
-          <div class="review-avatar" style="background: #10b981;">M</div>
-          <div class="review-name">— Meredith Callaghan</div>
-        </div>
-      </div>
-      
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">What a wonderful experience. Nick did a wonderful job. I have already shared this with all my neighbors! I will definitely use him again!</p>
-        <div class="review-author">
-          <div class="review-avatar" style="background: #ef4444;">S</div>
-          <div class="review-name">— Stephen Brenan</div>
-        </div>
-      </div>
-      
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">Excellent service. Windows look brand new.</p>
-        <div class="review-author">
-          <div class="review-avatar" style="background: #6366f1;">L</div>
-          <div class="review-name">— Laura A.</div>
-        </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Nick did a fantastic job. My windows look great. I highly recommend this service to anyone who needs there outside windows cleaned. You will not be disappointed.</p>
+      <div class="review-author">
+        <div class="review-avatar" style="background: #0ea5e9;">B</div>
+        <div class="review-name">— Bill Naz</div>
       </div>
     </div>
-  </div>
-  
-  <div class="review-nav">
-    <button class="review-nav-btn" onclick="moveReviews(-1)">←</button>
-    <button class="review-nav-btn" onclick="moveReviews(1)">→</button>
+    
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">I was extremely happy with the work performed by Nick. He explained the process he was using. The how and why it left your windows process. Cleaned the sills and the screens.</p>
+      <div class="review-author">
+        <div class="review-avatar" style="background: #8b5cf6;">C</div>
+        <div class="review-name">— Crystal Vincent</div>
+      </div>
+    </div>
+    
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Nick was great! We have old windows and they really needed some TLC. He worked very hard and I'm very pleased with the end results! We will be using him again!</p>
+      <div class="review-author">
+        <div class="review-avatar" style="background: #f59e0b;">R</div>
+        <div class="review-name">— Rose Gregory</div>
+      </div>
+    </div>
+    
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Definitely recommend. Excellent service. Great prices. My windows are cleaner now than when they were brand new</p>
+      <div class="review-author">
+        <div class="review-avatar" style="background: #10b981;">M</div>
+        <div class="review-name">— Meredith Callaghan</div>
+      </div>
+    </div>
+    
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">What a wonderful experience. Nick did a wonderful job. I have already shared this with all my neighbors! I will definitely use him again!</p>
+      <div class="review-author">
+        <div class="review-avatar" style="background: #ef4444;">S</div>
+        <div class="review-name">— Stephen Brenan</div>
+      </div>
+    </div>
+    
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Excellent service. Windows look brand new.</p>
+      <div class="review-author">
+        <div class="review-avatar" style="background: #6366f1;">L</div>
+        <div class="review-name">— Laura A.</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1591,7 +1547,7 @@ footer {
         <span class="faq-icon">+</span>
       </div>
       <div class="faq-answer">
-        Not for exterior work. Many clients leave a garage code or key. For interior cleaning, we'll need access inside.
+        It depends on the scope of work. For exterior-only service, you don't need to be home—many clients simply remove their window screens beforehand so we can access the glass behind them. For interior cleaning, we'll need access inside.
       </div>
     </div>
     
@@ -1601,7 +1557,7 @@ footer {
         <span class="faq-icon">+</span>
       </div>
       <div class="faq-answer">
-        No. We use surface-appropriate pressure and chemical-free cleaning when possible. Every surface gets exactly the right treatment—never more than it can handle.
+        We use surface-appropriate pressure, and proper handling of chemicals when necessary for cleaning to ensure your home is getting the best clean, the safest way.
       </div>
     </div>
   </div>
@@ -1781,27 +1737,6 @@ const galleryObserver = new IntersectionObserver((entries) => {
 galleryItems.forEach(item => {
   galleryObserver.observe(item);
 });
-
-// Reviews smooth carousel with navigation
-let currentPosition = 0;
-const reviewsTrack = document.getElementById('reviewsTrack');
-const reviewCards = document.querySelectorAll('.review-card');
-const cardWidth = reviewCards[0].offsetWidth + 24; // card width + gap
-
-function moveReviews(direction) {
-  const maxPosition = -(reviewCards.length - 2) * cardWidth;
-  currentPosition += direction * -cardWidth;
-  
-  if (currentPosition > 0) currentPosition = maxPosition;
-  if (currentPosition < maxPosition) currentPosition = 0;
-  
-  reviewsTrack.style.transform = `translateX(${currentPosition}px)`;
-}
-
-// Auto-advance every 6 seconds
-setInterval(() => {
-  moveReviews(1);
-}, 6000);
 </script>
 
 </body>
