@@ -719,6 +719,11 @@ nav.visible {
   padding: 2rem;
   border-radius: 12px;
   transition: all 0.3s ease;
+  width: 100%;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .review-card:hover {
@@ -738,6 +743,10 @@ nav.visible {
   margin-bottom: 1.5rem;
   line-height: 1.6;
   color: var(--black);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .review-author {
@@ -746,6 +755,7 @@ nav.visible {
   gap: 1rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--light-gray);
+  min-width: 0;
 }
 
 .review-avatar {
@@ -765,6 +775,10 @@ nav.visible {
 .review-name {
   font-weight: 600;
   font-size: 0.95rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
 }
 
 /* FAQ */
@@ -1231,6 +1245,31 @@ footer {
   
   .reviews-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .reviews {
+    padding: 3rem 1rem;
+  }
+  
+  .review-card {
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+  
+  .review-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .review-author {
+    padding-top: 1rem;
+  }
+  
+  .review-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
   }
   
   .contact-form {
@@ -1452,7 +1491,7 @@ footer {
       <p class="review-text">Nick did a fantastic job. My windows look great. I highly recommend this service to anyone who needs there outside windows cleaned. You will not be disappointed.</p>
       <div class="review-author">
         <div class="review-avatar" style="background: #0ea5e9;">B</div>
-        <div class="review-name">— Bill Naz</div>
+        <div class="review-name">— Bill N.</div>
       </div>
     </div>
     
@@ -1461,7 +1500,7 @@ footer {
       <p class="review-text">I was extremely happy with the work performed by Nick. He explained the process he was using. The how and why it left your windows process. Cleaned the sills and the screens.</p>
       <div class="review-author">
         <div class="review-avatar" style="background: #8b5cf6;">C</div>
-        <div class="review-name">— Crystal Vincent</div>
+        <div class="review-name">— Crystal V.</div>
       </div>
     </div>
     
@@ -1470,7 +1509,7 @@ footer {
       <p class="review-text">Nick was great! We have old windows and they really needed some TLC. He worked very hard and I'm very pleased with the end results! We will be using him again!</p>
       <div class="review-author">
         <div class="review-avatar" style="background: #f59e0b;">R</div>
-        <div class="review-name">— Rose Gregory</div>
+        <div class="review-name">— Rose G.</div>
       </div>
     </div>
     
@@ -1479,7 +1518,7 @@ footer {
       <p class="review-text">Definitely recommend. Excellent service. Great prices. My windows are cleaner now than when they were brand new</p>
       <div class="review-author">
         <div class="review-avatar" style="background: #10b981;">M</div>
-        <div class="review-name">— Meredith Callaghan</div>
+        <div class="review-name">— Meredith C.</div>
       </div>
     </div>
     
@@ -1488,7 +1527,7 @@ footer {
       <p class="review-text">What a wonderful experience. Nick did a wonderful job. I have already shared this with all my neighbors! I will definitely use him again!</p>
       <div class="review-author">
         <div class="review-avatar" style="background: #ef4444;">S</div>
-        <div class="review-name">— Stephen Brenan</div>
+        <div class="review-name">— Stephen B.</div>
       </div>
     </div>
     
