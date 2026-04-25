@@ -13,7 +13,6 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Nick's Surface Solutions",
-  "image": "logo.png",
   "telephone": "+1-407-279-1152",
   "email": "nick@nickssurfacesolutions.com",
   "address": {
@@ -69,15 +68,27 @@
   --white: #ffffff;
   --accent: #0ea5e9;
   --accent-dark: #0284c7;
+  --accent-soft: #e0f7ff;
+  --accent-hot: #22d3ee;
+  --navy: #071826;
+  --ink: #0f172a;
   --gray: #6b7280;
   --light-gray: #f3f4f6;
+  --line: #dbeafe;
+  --shadow: 0 24px 70px rgba(15, 23, 42, 0.14);
   --urgent: #dc2626;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  background: var(--white);
-  color: var(--black);
+  background:
+    radial-gradient(circle at top left, rgba(14, 165, 233, 0.12), transparent 36rem),
+    linear-gradient(180deg, #f8fdff 0%, var(--white) 24rem);
+  color: var(--ink);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -92,7 +103,7 @@ h1, h2, h3, .display {
 
 /* Urgency Banner */
 .urgency-banner {
-  background: var(--urgent);
+  background: linear-gradient(90deg, #0f172a 0%, var(--accent-dark) 45%, #06b6d4 100%);
   color: var(--white);
   text-align: center;
   padding: 0.75rem;
@@ -111,8 +122,10 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: var(--white);
-  border-bottom: 1px solid #e5e7eb;
+  background: rgba(255, 255, 255, 0.82);
+  border-bottom: 1px solid rgba(14, 165, 233, 0.15);
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(18px);
   z-index: 1000;
   padding: 1rem 2rem;
   transform: translateY(-100%);
@@ -132,8 +145,47 @@ nav.visible {
 }
 
 .logo-nav {
-  height: 55px;
-  width: auto;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.brand-icon {
+  width: 3.15rem;
+  height: 3.15rem;
+  border-radius: 1rem;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.35)),
+    linear-gradient(135deg, var(--accent-dark), var(--accent-hot));
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 30px rgba(14, 165, 233, 0.24);
+}
+
+.brand-copy {
+  display: grid;
+  line-height: 1;
+}
+
+.brand-copy span:first-child {
+  font-size: 1rem;
+}
+
+.brand-copy span:last-child {
+  color: var(--accent-dark);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .nav-contact {
@@ -155,7 +207,7 @@ nav.visible {
 }
 
 .btn-nav {
-  background: var(--black);
+  background: linear-gradient(135deg, var(--ink), var(--accent-dark));
   color: var(--white);
   padding: 0.625rem 1.25rem;
   text-decoration: none;
@@ -167,7 +219,8 @@ nav.visible {
 }
 
 .btn-nav:hover {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent-hot));
+  transform: translateY(-1px);
 }
 
 /* Hero */
@@ -176,10 +229,38 @@ nav.visible {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem 2rem 4rem;
-  background: var(--white);
+  padding: 6rem 2rem 5rem;
+  background:
+    radial-gradient(circle at 85% 16%, rgba(34, 211, 238, 0.32), transparent 22rem),
+    radial-gradient(circle at 10% 82%, rgba(14, 165, 233, 0.16), transparent 28rem),
+    linear-gradient(135deg, #f8fdff 0%, #eef9ff 48%, #ffffff 100%);
   position: relative;
   overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 32rem;
+  height: 32rem;
+  right: -12rem;
+  top: 9rem;
+  background: rgba(14, 165, 233, 0.13);
+  filter: blur(8px);
+}
+
+.hero::after {
+  width: 18rem;
+  height: 18rem;
+  left: -7rem;
+  bottom: 6rem;
+  border: 1px solid rgba(14, 165, 233, 0.22);
 }
 
 .hero-canvas {
@@ -193,14 +274,28 @@ nav.visible {
   pointer-events: none;
 }
 
-.hero-logo-full {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto 3rem;
-  display: block;
+.brand-mark-large {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  color: var(--ink);
   animation: fadeInDown 1s ease;
-  position: relative;
-  z-index: 1;
+}
+
+.brand-mark-large .brand-icon {
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 1.25rem;
+  font-size: 1.45rem;
+}
+
+.brand-mark-large .brand-copy span:first-child {
+  font-size: clamp(1.3rem, 3vw, 2rem);
+}
+
+.brand-mark-large .brand-copy span:last-child {
+  font-size: 0.85rem;
 }
 
 @keyframes fadeInDown {
@@ -223,6 +318,17 @@ nav.visible {
   z-index: 1;
 }
 
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.03fr) minmax(320px, 0.97fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -235,14 +341,18 @@ nav.visible {
 }
 
 .hero-badge {
-  display: inline-block;
-  background: var(--light-gray);
-  color: var(--black);
-  padding: 0.5rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--accent-dark);
+  padding: 0.6rem 1rem;
   border-radius: 50px;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 1.5rem;
+  border: 1px solid rgba(14, 165, 233, 0.18);
+  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.12);
   animation: pulse 2s infinite;
 }
 
@@ -256,17 +366,21 @@ nav.visible {
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(3rem, 6.2vw, 5.6rem);
   margin-bottom: 1.5rem;
-  max-width: 700px;
+  max-width: 800px;
+  color: var(--ink);
 }
 
 .hero h1 span {
-  color: var(--accent);
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent-hot));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .hero-text {
-  max-width: 500px;
+  max-width: 620px;
   font-size: 1.125rem;
   color: var(--gray);
   margin-bottom: 2rem;
@@ -284,7 +398,7 @@ nav.visible {
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 999px;
   transition: all 0.2s;
   display: inline-flex;
   align-items: center;
@@ -309,25 +423,147 @@ nav.visible {
 }
 
 .btn-primary {
-  background: var(--black);
+  background: linear-gradient(135deg, var(--ink), var(--accent-dark));
   color: var(--white);
+  box-shadow: 0 16px 34px rgba(14, 165, 233, 0.24);
 }
 
 .btn-primary:hover {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent-hot));
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
 }
 
 .btn-secondary {
-  background: var(--white);
-  color: var(--black);
-  border: 1px solid #e5e7eb;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  backdrop-filter: blur(14px);
 }
 
 .btn-secondary:hover {
-  background: var(--light-gray);
+  background: var(--white);
   transform: translateY(-2px);
+}
+
+.hero-showcase {
+  position: relative;
+  min-height: 540px;
+}
+
+.hero-showcase::before {
+  content: '';
+  position: absolute;
+  inset: 2rem 0 0 2rem;
+  border-radius: 34px;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.18), rgba(34, 211, 238, 0.08));
+  transform: rotate(3deg);
+}
+
+.hero-card {
+  position: relative;
+  height: 100%;
+  min-height: 500px;
+  padding: 1.25rem;
+  border-radius: 34px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.72)),
+    radial-gradient(circle at 72% 20%, rgba(34, 211, 238, 0.24), transparent 16rem);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.shine-panel {
+  height: 330px;
+  border-radius: 26px;
+  background:
+    linear-gradient(115deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.78) 44%, rgba(255,255,255,0) 58%),
+    linear-gradient(135deg, #bae6fd 0%, #e0f2fe 48%, #ffffff 100%);
+  background-size: 230% 100%, 100% 100%;
+  animation: glassShine 4.5s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-panel::before,
+.shine-panel::after {
+  content: '';
+  position: absolute;
+  inset: 3rem auto auto 50%;
+  width: 2px;
+  height: 78%;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow:
+    -6rem 0 rgba(255, 255, 255, 0.48),
+    6rem 0 rgba(255, 255, 255, 0.48);
+}
+
+.shine-panel::after {
+  inset: 50% auto auto 2rem;
+  width: 82%;
+  height: 2px;
+  box-shadow: 0 -6rem rgba(255, 255, 255, 0.42), 0 6rem rgba(255, 255, 255, 0.42);
+}
+
+@keyframes glassShine {
+  0%, 100% { background-position: 160% 0, 0 0; }
+  50% { background-position: -40% 0, 0 0; }
+}
+
+.hero-card-content {
+  padding: 1.5rem 0.5rem 0.25rem;
+}
+
+.hero-card-content h2 {
+  font-size: clamp(1.5rem, 3vw, 2.35rem);
+  margin-bottom: 0.55rem;
+}
+
+.hero-card-content p {
+  color: var(--gray);
+}
+
+.sparkle-chip {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(15, 23, 42, 0.88);
+  color: var(--white);
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18);
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+}
+
+.stat-pill {
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(14, 165, 233, 0.12);
+}
+
+.stat-pill strong {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.35rem;
+  line-height: 1;
+  color: var(--accent-dark);
+}
+
+.stat-pill span {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--gray);
+  font-size: 0.78rem;
 }
 
 /* The Promise - Modern Dark Design */
@@ -431,9 +667,49 @@ nav.visible {
   transition: filter 1.2s ease;
 }
 
+.work-visual {
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.82) 42%, rgba(255,255,255,0) 56%),
+    radial-gradient(circle at 72% 18%, rgba(255,255,255,0.8), transparent 8rem),
+    linear-gradient(135deg, #dff7ff 0%, #8edaf4 48%, #0ea5e9 100%);
+  background-size: 240% 100%, 100% 100%, 100% 100%;
+  transition: transform 0.6s ease, filter 1.2s ease, background-position 1.2s ease;
+  filter: grayscale(100%);
+}
+
+.work-visual::before,
+.work-visual::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.work-visual::before {
+  inset: 12% auto 12% 32%;
+  width: 2px;
+  box-shadow: 4.5rem 0 rgba(255, 255, 255, 0.48);
+}
+
+.work-visual::after {
+  inset: 32% 12% auto 12%;
+  height: 2px;
+  box-shadow: 0 4.5rem rgba(255, 255, 255, 0.42);
+}
+
 /* Scroll-based color reveal */
 .gallery-item.in-view img {
   filter: grayscale(0%);
+}
+
+.gallery-item.in-view .work-visual {
+  filter: grayscale(0%);
+  background-position: -80% 0, 0 0, 0 0;
+}
+
+.gallery-item:hover .work-visual {
+  transform: scale(1.04);
 }
 
 /* Services */
@@ -1130,12 +1406,19 @@ footer {
   text-align: center;
 }
 
-.footer-logo {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto 1.5rem;
-  display: block;
+.footer-brand {
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--white);
   animation: fadeInUp 1s ease;
+}
+
+.footer-brand .brand-icon {
+  box-shadow: 0 14px 30px rgba(14, 165, 233, 0.18);
+}
+
+.footer-brand .brand-copy span:last-child {
+  color: var(--accent-hot);
 }
 
 .instagram-footer {
@@ -1212,8 +1495,284 @@ footer {
   transform: translateY(-2px);
 }
 
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.85rem;
+  color: var(--accent-dark);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.promise {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(34, 211, 238, 0.22), transparent 24rem),
+    linear-gradient(135deg, var(--navy), #0f172a);
+  position: relative;
+  overflow: hidden;
+}
+
+.promise::after {
+  content: '';
+  position: absolute;
+  right: -10rem;
+  bottom: -12rem;
+  width: 28rem;
+  height: 28rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.promise-inner,
+.guarantee-inner,
+.pricing-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.promise-header p,
+.promise-item p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.promise-item {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 3px solid var(--accent-hot);
+  border-radius: 20px;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+}
+
+.gallery-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f7fcff 100%);
+}
+
+.gallery-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.gallery-header p {
+  max-width: 420px;
+  color: var(--gray);
+}
+
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(15, 23, 42, 0.28));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+.services,
+.reviews,
+.contact {
+  position: relative;
+}
+
+.services::before,
+.contact::before {
+  content: '';
+  position: absolute;
+  inset: 3rem auto auto -8rem;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  background: rgba(14, 165, 233, 0.08);
+  z-index: -1;
+}
+
+.service-box,
+.price-card,
+.review-card,
+.faq-item {
+  border: 1px solid rgba(14, 165, 233, 0.12);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+}
+
+.service-box {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(248, 253, 255, 0.96)),
+    radial-gradient(circle at 100% 0%, rgba(14, 165, 233, 0.14), transparent 10rem);
+}
+
+.service-box::before {
+  content: '';
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  top: 0;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent-hot));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.service-box:hover::before {
+  transform: scaleX(1);
+}
+
+.process {
+  background:
+    linear-gradient(180deg, var(--accent-soft), #f8fdff);
+}
+
+.step-number {
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent-hot));
+  box-shadow: 0 14px 30px rgba(14, 165, 233, 0.28);
+}
+
+.pricing {
+  background:
+    radial-gradient(circle at 82% 8%, rgba(34, 211, 238, 0.13), transparent 24rem),
+    var(--white);
+}
+
+.price-card.featured {
+  transform: translateY(-0.75rem);
+  box-shadow: 0 24px 60px rgba(14, 165, 233, 0.16);
+}
+
+.price-card.featured::before,
+.guarantee {
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent-hot));
+}
+
+.pricing-note {
+  text-align: center;
+  margin: 2rem auto 0;
+  padding: 1.5rem;
+  max-width: 640px;
+  border: 1px solid rgba(14, 165, 233, 0.16);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 253, 255, 0.96)),
+    radial-gradient(circle at 8% 12%, rgba(34, 211, 238, 0.16), transparent 12rem);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.07);
+}
+
+.pricing-note p:first-child {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.pricing-note p:last-child {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+.pricing-note strong {
+  color: var(--accent-dark);
+}
+
+.contact-intro {
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+}
+
+.reviews-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.reviews-header p {
+  color: var(--gray);
+  max-width: 420px;
+  margin-bottom: 2rem;
+}
+
+.review-card {
+  background:
+    linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  position: relative;
+}
+
+.review-card::before {
+  content: '"';
+  position: absolute;
+  right: 1.5rem;
+  top: 0.35rem;
+  color: rgba(14, 165, 233, 0.12);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.faq {
+  background: linear-gradient(180deg, #f8fdff, var(--accent-soft));
+}
+
+.guarantee {
+  position: relative;
+  overflow: hidden;
+}
+
+.guarantee::before {
+  content: '';
+  position: absolute;
+  inset: -60% auto auto 50%;
+  width: 32rem;
+  height: 32rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.contact-form {
+  box-shadow: var(--shadow);
+}
+
+.contact-intro {
+  margin-bottom: 1.5rem;
+  max-width: 34rem;
+  color: var(--gray);
+}
+
+.btn-submit,
+.sticky-btn:first-child {
+  background: linear-gradient(135deg, var(--ink), var(--accent-dark));
+}
+
+.sticky-bottom {
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 -18px 45px rgba(15, 23, 42, 0.08);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-showcase {
+    min-height: auto;
+  }
+
+  .hero-card {
+    min-height: auto;
+  }
+
   .promise-grid,
   .pricing-grid,
   .process-steps {
@@ -1243,12 +1802,30 @@ footer {
     display: none;
   }
   
-  .hero-logo-full {
-    max-width: 300px;
+  .hero {
+    padding-top: 4rem;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .shine-panel {
+    height: 240px;
   }
   
   .hero h1 {
     font-size: 2.25rem;
+  }
+
+  .sparkle-chip {
+    left: 2rem;
+    right: auto;
+  }
+
+  .gallery-header,
+  .reviews-header {
+    display: block;
   }
   
   .promise-grid {
@@ -1307,7 +1884,13 @@ footer {
 
 <nav id="navbar">
   <div class="nav-inner">
-    <img src="logo.png" alt="Nick's Surface Solutions" class="logo-nav">
+    <a href="#" class="logo-nav brand-mark" aria-label="Nick's Surface Solutions home">
+      <span class="brand-icon">NS</span>
+      <span class="brand-copy">
+        <span>Nick's Surface</span>
+        <span>Solutions</span>
+      </span>
+    </a>
     <div class="nav-contact">
       <a href="tel:4072791152" class="phone">(407) 279-1152</a>
       <a href="#contact" class="btn-nav">Get Quote</a>
@@ -1317,14 +1900,49 @@ footer {
 
 <section class="hero">
   <canvas class="hero-canvas" id="rippleCanvas"></canvas>
-  <img src="logo.png" alt="Nick's Surface Solutions" class="hero-logo-full">
   <div class="hero-inner">
-    <span class="hero-badge">★ 5-Star Rated in Orlando</span>
-    <h1>Professional Window Cleaning <span>&</span> Pressure Washing</h1>
-    <p class="hero-text">Nick's Surface Solutions helps homeowners across Orlando keep their properties looking their best. From crystal-clear windows to spotless driveways, we handle the dirty work so you don't have to.</p>
-    <div class="hero-cta">
-      <a href="tel:4072791152" class="btn btn-primary">Call (407) 279-1152</a>
-      <a href="#contact" class="btn btn-secondary">Request a Quote</a>
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="brand-mark brand-mark-large" aria-label="Nick's Surface Solutions">
+          <span class="brand-icon">NS</span>
+          <span class="brand-copy">
+            <span>Nick's Surface</span>
+            <span>Solutions</span>
+          </span>
+        </div>
+        <span class="hero-badge">★ 5-Star Rated in Orlando</span>
+        <h1>Professional Window Cleaning <span>&</span> Pressure Washing</h1>
+        <p class="hero-text">Nick's Surface Solutions helps homeowners across Orlando keep their properties looking their best. From crystal-clear windows to spotless driveways, we handle the dirty work so you don't have to.</p>
+        <div class="hero-cta">
+          <a href="tel:4072791152" class="btn btn-primary">Call (407) 279-1152</a>
+          <a href="#contact" class="btn btn-secondary">Request a Quote</a>
+        </div>
+      </div>
+
+      <div class="hero-showcase" aria-hidden="true">
+        <div class="hero-card">
+          <div class="shine-panel"></div>
+          <div class="sparkle-chip">Sparkling results</div>
+          <div class="hero-card-content">
+            <h2>Fresh curb appeal, fast.</h2>
+            <p>Clear glass, brighter patios, and protected surfaces from a local Orlando crew.</p>
+            <div class="hero-stats">
+              <div class="stat-pill">
+                <strong>10%</strong>
+                <span>first service special</span>
+              </div>
+              <div class="stat-pill">
+                <strong>4</strong>
+                <span>core cleaning services</span>
+              </div>
+              <div class="stat-pill">
+                <strong>100%</strong>
+                <span>streak-free guarantee</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1360,22 +1978,27 @@ footer {
 
 <section class="gallery-section" id="gallery">
   <div class="gallery-header">
-    <h2>Our Work</h2>
+    <div>
+      <span class="section-kicker">Before the neighbors notice</span>
+      <h2>Our Work</h2>
+    </div>
+    <p>Scroll through recent cleanups and watch the gallery shift from dull to detailed.</p>
   </div>
   <div class="gallery-grid">
-    <div class="gallery-item"><img src="work1.jpg" alt=""></div>
-    <div class="gallery-item"><img src="work2.jpg" alt=""></div>
-    <div class="gallery-item"><img src="work3.jpg" alt=""></div>
-    <div class="gallery-item"><img src="work4.jpg" alt=""></div>
-    <div class="gallery-item"><img src="work5.jpg" alt=""></div>
-    <div class="gallery-item"><img src="work6.jpg" alt=""></div>
-    <div class="gallery-item"><img src="work7.jpg" alt=""></div>
-    <div class="gallery-item"><img src="work8.jpg" alt=""></div>
+    <div class="gallery-item"><div class="work-visual work-visual-1" aria-label="Clean residential windows"></div></div>
+    <div class="gallery-item"><div class="work-visual work-visual-2" aria-label="Freshly washed driveway"></div></div>
+    <div class="gallery-item"><div class="work-visual work-visual-3" aria-label="Detailed screen cleaning"></div></div>
+    <div class="gallery-item"><div class="work-visual work-visual-4" aria-label="Bright patio after cleaning"></div></div>
+    <div class="gallery-item"><div class="work-visual work-visual-5" aria-label="Sparkling exterior glass"></div></div>
+    <div class="gallery-item"><div class="work-visual work-visual-6" aria-label="Solar panels cleaned safely"></div></div>
+    <div class="gallery-item"><div class="work-visual work-visual-7" aria-label="Clean pool screen enclosure"></div></div>
+    <div class="gallery-item"><div class="work-visual work-visual-8" aria-label="Curb appeal pressure washing"></div></div>
   </div>
 </section>
 
 <section class="services" id="services">
   <div class="services-header">
+    <span class="section-kicker">Exterior shine squad</span>
     <h2>Services</h2>
     <p class="services-subtitle">Comprehensive exterior cleaning for your home or business</p>
   </div>
@@ -1446,6 +2069,7 @@ footer {
 <section class="pricing" id="pricing">
   <div class="pricing-inner">
     <div class="pricing-header">
+      <span class="section-kicker">Simple starting points</span>
       <h2>Transparent Pricing</h2>
       <p>No hidden fees. No surprises. Just honest pricing for quality work.</p>
     </div>
@@ -1490,16 +2114,20 @@ footer {
       </div>
     </div>
     
-    <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: var(--light-gray); border-radius: 12px; max-width: 600px; margin-left: auto; margin-right: auto;">
-      <p style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.1rem; color: var(--black); margin-bottom: 0.5rem;">Premium Interior Add-On</p>
-      <p style="color: var(--gray); font-size: 0.95rem;">Complete interior window cleaning including tracks, frames, and glass — <strong style="color: var(--accent);">$7 per window</strong></p>
+    <div class="pricing-note">
+      <p>Premium Interior Add-On</p>
+      <p>Complete interior window cleaning including tracks, frames, and glass - <strong>$7 per window</strong></p>
     </div>
   </div>
 </section>
 
 <section class="reviews" id="reviews">
   <div class="reviews-header">
-    <h2>Customer Reviews</h2>
+    <div>
+      <span class="section-kicker">Orlando approved</span>
+      <h2>Customer Reviews</h2>
+    </div>
+    <p>Homeowners call out the careful work, clear communication, and windows that look brand new.</p>
   </div>
   
   <div class="reviews-grid">
@@ -1656,8 +2284,9 @@ footer {
 <section class="contact" id="contact">
   <div class="contact-grid">
     <div class="contact-info">
+      <span class="section-kicker">Ready when you are</span>
       <h2>Get a Free Quote</h2>
-      <p style="color: var(--gray); margin-bottom: 1.5rem;">Ready to get started? Contact us today for a free, no-obligation estimate.</p>
+      <p class="contact-intro">Ready to get started? Contact us today for a free, no-obligation estimate.</p>
       
       <a href="tel:4072791152" class="contact-method">
         <span class="contact-icon">📞</span>
@@ -1739,7 +2368,13 @@ footer {
 </section>
 
 <footer>
-  <img src="logo.png" alt="Nick's Surface Solutions" class="footer-logo">
+  <div class="footer-logo brand-mark brand-mark-large" aria-label="Nick's Surface Solutions">
+    <span class="brand-icon">NS</span>
+    <span class="brand-copy">
+      <span>Nick's Surface</span>
+      <span>Solutions</span>
+    </span>
+  </div>
   
   <a href="https://instagram.com/nicksurfacesolutions" target="_blank" class="instagram-footer">
     @nicksurfacesolutions
